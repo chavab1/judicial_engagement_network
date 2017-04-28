@@ -206,6 +206,11 @@ legend {
   white-space: normal; /* 1 */
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 
 progress {
   display: inline-block; /* 1 */
@@ -261,13 +266,6 @@ template {
 }
 
 
-
-/* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
-
-
-
 /* Hide from both screenreaders and browsers: h5bp.com/u */
 .hidden {
 	display: none !important;
@@ -275,7 +273,7 @@ template {
 }
 
 /* Hide only visually, but have it available for screenreaders: h5bp.com/v */
-.visuallyhidden {
+.v-hidden {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
@@ -287,7 +285,7 @@ template {
 }
 
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+.v-hidden.focusable:active, .v-hidden.focusable:focus {
 	clip: auto;
 	height: auto;
 	margin: 0;
@@ -299,6 +297,7 @@ template {
 /* Hide visually and from screenreaders, but maintain layout */
 .invisible { visibility: hidden; }
 
-ol, ul, li {
-	list-style:inside none;
-}
+
+
+
+

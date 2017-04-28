@@ -1,0 +1,67 @@
+﻿header {
+    height: 68px;
+    background: $color__primary--dark;
+    padding: 10px;
+    @include susy-media($mobile__wide) {
+        height: 100px;
+    }
+    @include susy-media($tablet) {
+        height: 140px;
+        padding: 8px 20px;
+    }
+    .search {
+        display:inline-block;
+    }
+}
+
+.site-branding {
+    display: inline-block;
+    fill: #FFF;
+    svg {
+        width: 112px;
+        height: 48px;
+        @include susy-media($mobile__wide) {
+            width: 180px;
+            height: 80px;
+        }
+        @include susy-media($tablet) {
+            width: 280px;
+            height: 124px;
+        }
+    }
+}
+
+.header-right {
+    display: inline-block;
+    float: right;
+    margin: 37px 0;
+    > div {
+        float: left;
+        margin: 0 0 0 20px;
+    }
+    button {
+        width: 50px;
+        height: 50px;
+    }
+    .custom {                
+        color: $color__gray;
+        button {
+            float: left;
+            border: 1px solid $color__primary;
+            font: 14px $font__condensed;
+            text-transform: uppercase;
+            transition: background .3s ease, color .3s ease;
+            &:hover {
+                background: $color__primary;
+                color: #FFF;
+            }
+            div {
+                font-size: 30px;
+                line-height: 24px;
+            }
+            + button {
+                margin: 0 0 0 2px;
+            }
+        }
+    }
+}

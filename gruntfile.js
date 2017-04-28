@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        template_path: 'templates/ta2ta/',
+        template_path: 'templates/jen/',
 
         uglify: {
             vendors: {
@@ -32,6 +32,8 @@ module.exports = function (grunt) {
         // SASS
         sass: {
             options: {
+                includePaths: ['node_modules/susy/sass'],
+                require: 'susy',
                 outputStyle: 'compressed',
                 sourceMap: true
             },

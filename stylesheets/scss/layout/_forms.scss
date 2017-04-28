@@ -1,0 +1,36 @@
+﻿
+
+
+input:not([type='submit']) {
+    padding: 16px 10px;
+    background: $color__gray;
+    transition: background .3s ease;
+    &:focus {
+        background: #FFF;
+    }
+}
+
+.search {
+    form {
+        @include susy-clearfix;
+    }
+    input[type="search"] {
+        height: 50px;
+    }
+}
+
+.search-button {
+    float: right;
+    fill: $color__gray;
+    border: 1px solid $color__gray;
+    transition: background .3s ease, border .3s ease, fill .3s ease;
+    &:hover {
+        background: $color__primary;
+        border: 1px solid $color__primary;
+        fill: #FFF;
+    }
+    svg {
+        width: 26px;
+        height: 26px;
+    }
+}

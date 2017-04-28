@@ -12,6 +12,7 @@
     <filename>index.php</filename>
     <filename>templateDetails.xml</filename>
     <folder>js</folder>
+    <folder>html/</folder>
     <folder>stylesheets/css</folder>
     <folder>images</folder>
     <folder>fonts</folder>
@@ -19,6 +20,7 @@
     <filename>package.json</filename>
   </files>
   <positions>
+    <position>header-right</position>
     <position>breadcrumb</position>
     <position>main-nav</position>
     <position>hero</position>

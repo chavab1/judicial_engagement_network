@@ -1,0 +1,41 @@
+﻿/*COLORS*/
+$color__primary: #134c91;
+$color__primary--dark: #0b3871;
+$color__trim: #e7af40;
+$color__trim--dark: #ce982e;
+$color__gray: #acbbc0;
+$color__gray--light: #e9e7e8;
+
+
+/*FONTS*/
+$base__font-size: 16px;
+$base__line-height: 18px;
+
+$font__body: CarroisGothic, Arial, sans-serif;
+$font__medium: GothamMedium, Arial, sans-serif;
+$font__condensed: GothamCondensed, Arial, sans-serif;
+
+$container__width: 1368px;
+$mobile__wide: 580px;
+$tablet: 768px;
+$desktop: 920px;
+$desktop__wide: 1200px;
+
+/*GRID*/
+$susy: (
+    columns: 12,
+    container: $container__width,
+    gutters: 1/4,
+    global-box-sizing: border-box,
+    debug: (
+        image: show,
+        output: background
+    ),
+);
+
+$susy-media: (
+    mobile-wide: $mobile__wide,
+    tablet: $tablet,
+    desktop: $desktop,
+    desktop-wide: $desktop__wide
+);

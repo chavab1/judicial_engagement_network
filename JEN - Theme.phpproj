@@ -16,31 +16,61 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="html\mod_search\default.php" />
     <Compile Include="index.php" />
     <Compile Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
+    <Folder Include="html\mod_search\" />
     <Folder Include="images\" />
+    <Folder Include="images\svgs\" />
     <Folder Include="js\" />
     <Folder Include="language\" />
     <Folder Include="language\en-GB\" />
+    <Folder Include="html\" />
     <Folder Include="stylesheets\" />
     <Folder Include="stylesheets\scss\base\" />
     <Folder Include="stylesheets\css\" />
     <Folder Include="stylesheets\scss\" />
     <Folder Include="stylesheets\scss\helpers\" />
     <Folder Include="stylesheets\scss\layout\" />
+    <Folder Include="stylesheets\scss\components\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="fonts\CarroisGothic.eot" />
+    <Content Include="fonts\CarroisGothic.svg" />
+    <Content Include="fonts\CarroisGothic.ttf" />
+    <Content Include="fonts\CarroisGothic.woff" />
+    <Content Include="fonts\GothamCondensed.eot" />
+    <Content Include="fonts\GothamCondensed.svg" />
+    <Content Include="fonts\GothamCondensed.ttf" />
+    <Content Include="fonts\GothamCondensed.woff" />
+    <Content Include="fonts\GothamMedium.eot" />
+    <Content Include="fonts\GothamMedium.svg" />
+    <Content Include="fonts\GothamMedium.ttf" />
+    <Content Include="fonts\GothamMedium.woff" />
     <Content Include="gruntfile.js" />
-    <Content Include="language\en-GB\en-GB.tpl_jen.ini" />
+    <Content Include="html\index.html" />
+    <Content Include="html\mod_search\index.html" />
+    <Content Include="images\logo_jen.png" />
+    <Content Include="images\svgs\logo_jen.svg" />
     <Content Include="language\en-GB\en-GB.tpl_jen.sys.ini" />
+    <Content Include="language\en-GB\en-GB.tpl_jen.ini" />
     <Content Include="language\en-GB\index.html" />
     <Content Include="language\index.html" />
     <Content Include="package.json" />
+    <Content Include="stylesheets\css\styles.min.css" />
+    <Content Include="stylesheets\css\styles.min.css.map" />
+    <Content Include="stylesheets\css\system_general.css" />
     <Content Include="stylesheets\scss\base\_globals.scss" />
     <Content Include="stylesheets\scss\base\_reset.scss" />
+    <Content Include="stylesheets\scss\base\_typography.scss" />
+    <Content Include="stylesheets\scss\helpers\_functions.scss" />
+    <Content Include="stylesheets\scss\helpers\_mixins.scss" />
+    <Content Include="stylesheets\scss\helpers\_variables.scss" />
+    <Content Include="stylesheets\scss\layout\_forms.scss" />
+    <Content Include="stylesheets\scss\layout\_header.scss" />
     <Content Include="stylesheets\scss\styles.scss" />
     <Content Include="templateDetails.xml" />
   </ItemGroup>
