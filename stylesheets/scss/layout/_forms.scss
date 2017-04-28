@@ -11,16 +11,19 @@ input:not([type='submit']) {
 }
 
 .search {
+    display: inline-block;
     form {
         @include susy-clearfix;
     }
     input[type="search"] {
-        height: 50px;
+        height: 48px;
     }
 }
 
 .search-button {
     float: right;
+    width: 48px;
+    height: 48px;
     fill: $color__gray;
     border: 1px solid $color__gray;
     transition: background .3s ease, border .3s ease, fill .3s ease;

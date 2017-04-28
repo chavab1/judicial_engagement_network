@@ -34,7 +34,7 @@ else
 				if ($imagebutton) :
 					$btn_output = ' <input type="image" alt="' . $button_text . '" class="button" src="' . $img . '" onclick="this.form.searchword.focus();"/>';
 				else :
-					$btn_output = ' <button class="search-button" onclick="this.form.searchword.focus();"><svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 406 422" overflow="auto" role="presentation"><g><path d="M271.8 147.5c0-71.9-58.3-130.3-130.3-130.3-71.9 0-130.3 58.3-130.3 130.3 0 71.9 58.3 130.3 130.3 130.3 27.8 0 53.6-8.7 74.7-23.5l18.2 18.2 29.5-29.5-17.9-17.9c16.3-21.7 25.8-48.5 25.8-77.6zm-205 74.7c-20-20-31-46.5-31-74.7 0-28.2 11-54.8 31-74.7 20-20 46.5-31 74.7-31 28.2 0 54.8 11 74.7 31 20 20 31 46.5 31 74.7s-11 54.8-31 74.7c-20 20-46.5 31-74.7 31s-54.7-11-74.7-31zM368.5 404.7l-122.6-133 17.4-17.4 131.4 124.2"/></g></svg><span class="v-hidden">Search</span></button>';
+					$btn_output = ' <button class="search-button" onclick="this.form.searchword.focus();" arial-label="Perform Search"><svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 406 422" overflow="auto" role="presentation"><g><path d="M271.8 147.5c0-71.9-58.3-130.3-130.3-130.3-71.9 0-130.3 58.3-130.3 130.3 0 71.9 58.3 130.3 130.3 130.3 27.8 0 53.6-8.7 74.7-23.5l18.2 18.2 29.5-29.5-17.9-17.9c16.3-21.7 25.8-48.5 25.8-77.6zm-205 74.7c-20-20-31-46.5-31-74.7 0-28.2 11-54.8 31-74.7 20-20 46.5-31 74.7-31 28.2 0 54.8 11 74.7 31 20 20 31 46.5 31 74.7s-11 54.8-31 74.7c-20 20-46.5 31-74.7 31s-54.7-11-74.7-31zM368.5 404.7l-122.6-133 17.4-17.4 131.4 124.2"/></g></svg></button>';
 				endif;
 
 				switch ($button_pos) :

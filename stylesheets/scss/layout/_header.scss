@@ -1,4 +1,5 @@
 ﻿header {
+    position: relative;
     height: 68px;
     background: $color__primary--dark;
     padding: 10px;
@@ -10,7 +11,19 @@
         padding: 8px 20px;
     }
     .search {
-        display:inline-block;
+        position: absolute;
+        top: 68px;
+        right: 10px;
+        opacity: 0;
+        transition: transform .5s cubic-bezier(.27,-0.02,.59,.95), opacity .5s ease-in;
+        transform: translateX(100%);
+        @include susy-media($mobile__wide) {
+            position: relative;
+            top: 0;
+            right: 0;
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 }
 
@@ -31,30 +44,39 @@
     }
 }
 
+%header-button {
+    float: left;
+    width: 48px;
+    height: 48px;
+    border: 1px solid $color__primary;
+    font: 14px $font__condensed;
+    text-transform: uppercase;
+    transition: background .3s ease, color .3s ease;
+    &:hover {
+        background: $color__primary;
+        color: #FFF;
+    }
+}
+
 .header-right {
     display: inline-block;
     float: right;
-    margin: 37px 0;
+    @include susy-media($mobile__wide) {
+        margin: 15px 0;
+    }
+    @include susy-media($tablet) {
+        margin: 37px 0;
+    }
     > div {
         float: left;
-        margin: 0 0 0 20px;
-    }
-    button {
-        width: 50px;
-        height: 50px;
+        @include susy-media($mobile__wide) {
+            margin: 0 0 0 20px;
+        }
     }
     .custom {                
         color: $color__gray;
         button {
-            float: left;
-            border: 1px solid $color__primary;
-            font: 14px $font__condensed;
-            text-transform: uppercase;
-            transition: background .3s ease, color .3s ease;
-            &:hover {
-                background: $color__primary;
-                color: #FFF;
-            }
+            @extend %header-button;
             div {
                 font-size: 30px;
                 line-height: 24px;
@@ -64,4 +86,26 @@
             }
         }
     }
+}
+
+.search-toggle {
+    @extend %header-button;
+    display: inline-block;
+    margin: 0 2px 0 0;
+    padding: 11px;
+    fill: $color__gray;
+    cursor: pointer;
+    @include susy-media($mobile__wide) {
+        display: none;
+    }
+    svg {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+
+input[type=checkbox]:checked ~ div.search {
+    transform: translateX(0);
+    opacity: 1;
 }
