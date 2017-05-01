@@ -1,0 +1,119 @@
+﻿.nav-main {
+    position: relative;   
+    padding: 4px 10px;
+    background: $color__primary;
+    @include clearfix;
+    @include susy-media('mobile-wide') {
+        padding: 0 10px;
+    }
+    @include susy-media('tablet') {
+        padding: 0 20px;
+    }
+    ul {
+        text-align: center;
+    }
+    li {
+        @include susy-media('mobile-wide') {
+            display: inline-block;
+            float: left;
+        }
+        @include susy-media('desktop') {
+            float: none;
+        }  
+        &.active {
+            background: #213349;
+            @include susy-media('mobile-wide') {
+                background: $color__primary--dark;
+            }            
+        }  
+        a {
+            display: block;
+            position: relative;
+            padding: 10px 24px;
+            color: #FFF;
+            font: 22px $font__condensed;
+            text-transform: uppercase;
+            z-index: 1;
+            transition: color .3s ease;
+            @include susy-media('tablet') {
+                padding: 10px 40px;
+                font-size: 26px;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 1px solid $color__trim;
+                z-index: -1;
+                transform: scaleY(0);
+                transition: all .3s cubic-bezier(.13,.5,.66,.94);
+            }
+            &:hover {
+                color: $color__trim;
+                &:after {
+                    transform: scaleY(1);
+                }
+            }
+        }                    
+    }
+}
+
+
+.nav.menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    background: #142539;
+    transform: scaleY(0);
+    transform-origin: center top;
+    transition: transform .4s ease;
+    @include susy-media('mobile-wide') {
+        position: relative;
+        top: 0;
+        background: none;
+        transform: scaleY(1);
+    }
+}
+
+.login-button {
+    float: right;
+    @include susy-media('mobile-wide') {
+        position: absolute;
+        top: 6px;
+        right: 10px;
+    }
+    @include susy-media('tablet') {
+        top: 4px;
+        right: 20px;
+    }
+}
+
+
+a.nav-toggle {
+    display: none;
+}
+
+a.nav-toggle-reveal {
+    display: inline-block;
+    @include susy-media('mobile-wide') {
+        display: none;
+    }
+    &:target {
+        display: none;
+        & + a.nav-toggle-hide {
+            display: inline-block;
+            @include susy-media('mobile-wide') {
+                display: none;
+            }
+        }
+        & ~ .nav.menu {
+            transform: scaleY(1);
+        }
+    }
+}
+
+

@@ -27,10 +27,14 @@ $susy: (
     container: $container__width,
     gutters: 1/4,
     global-box-sizing: border-box,
+
     debug: (
         image: show,
-        output: background
+        output: overlay
     ),
+    use-custom: (
+        clearfix: true,
+    )
 );
 
 $susy-media: (

@@ -1,12 +1,30 @@
 ﻿body {
     font: #{$base__font-size}/#{$base__line-height}  $font__body;
     background: #282828;
+    -webkit-animation: bugfix infinite 1s; // To fix checkbox hack
+}
+
+@-webkit-keyframes bugfix { 
+  from {padding:0;} 
+  to {padding:0;} 
 }
 
 ol, ul, li {
 	list-style:inside none;
 }
 
+a {
+    text-decoration: none;
+}
+
+::selection {
+  background: lighten($color__primary, 40%); 
+}
+::-moz-selection {
+  background: lighten($color__primary, 40%); 
+}
+
 .wrapper {
     @include container;
+    background: #f6f6f6;
 }

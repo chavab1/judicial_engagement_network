@@ -150,20 +150,12 @@ $showContentBottom = $this->countModules('content-bottom');
 
     </header>
     <!--Nav-->
-    <div class="nav-outer">
-        <div class="container">
-            <nav id="navbar" class="container collapse navbar-collapse">
-                <a href="/" class="icon-home">
-                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300.7 248" overflow="scroll" role="link" aria-labelledby="title">
-                        <title>Home</title>
-                        <path d="M232.1 75V21.2h-55v6.4L150.3 4.4 3.9 130.8h54.4v116h184v-116h54.4L232.1 75zm-4.8 40.8v116h-47v-83.2h-60v83.2h-47v-116H44.2l106.1-91.6 41.8 36v-24h25v45.7l39.3 34h-29.1z"></path>
-                    </svg>
-                </a>
-                <jdoc:include type="modules" name="main-nav" />
-            </nav>
-        </div>
-    </div>
-
+        <nav class="nav-main">
+            <a href="#reveal-nav" id="reveal-nav" class="nav-toggle nav-toggle-reveal button-yellow">Main Menu</a>
+            <a href="#hide-nav" id="hide-nav" class="nav-toggle nav-toggle-hide button-yellow">Close</a>
+            <jdoc:include type="modules" name="main-nav" />
+            <button type="button" class="button-yellow login-button">MEMBER LOGIN</button>
+        </nav>
     <!--Hero Image-->
     <?php if($isHome): ?>
     <section class="hero">

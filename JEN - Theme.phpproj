@@ -66,11 +66,13 @@
     <Content Include="stylesheets\scss\base\_globals.scss" />
     <Content Include="stylesheets\scss\base\_reset.scss" />
     <Content Include="stylesheets\scss\base\_typography.scss" />
+    <Content Include="stylesheets\scss\components\_buttons.scss" />
     <Content Include="stylesheets\scss\helpers\_functions.scss" />
     <Content Include="stylesheets\scss\helpers\_mixins.scss" />
     <Content Include="stylesheets\scss\helpers\_variables.scss" />
     <Content Include="stylesheets\scss\layout\_forms.scss" />
     <Content Include="stylesheets\scss\layout\_header.scss" />
+    <Content Include="stylesheets\scss\layout\_navigation.scss" />
     <Content Include="stylesheets\scss\styles.scss" />
     <Content Include="templateDetails.xml" />
   </ItemGroup>
