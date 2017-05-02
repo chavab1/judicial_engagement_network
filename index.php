@@ -55,32 +55,15 @@ $showContentBottom = $this->countModules('content-bottom');
     <meta charset="utf-8" />
     <meta name="referrer" content="unsafe-url" />
 
-    <?php
-
-    // Generate Meta tags
-    foreach($this->_metaTags as $type => $items){
-        foreach($items as $name => $content){
-            if($name != "content-type" && !empty($content)){
-                echo '<meta name="' . $name . '" content="' . htmlspecialchars($content) . '" />';
-            }
-        }
-    }
-
-    // Generate Description tag
-    $documentDescription = $this->getDescription();
-    if($documentDescription){
-        echo '<meta name="description" content="' . htmlspecialchars($documentDescription) . '" />';
-    }
-    ?>
-
-    <!--Generate Title-->
-    <title><?php echo trim(htmlspecialchars($this->getTitle(), ENT_COMPAT, 'UTF-8')); ?></title>
+    
 
 
 
     <link href="<?php echo $templateUrl ?>/stylesheets/css/system_general.css" rel="stylesheet" />
     <link href="<?php echo $templateUrl ?>/stylesheets/css/styles.min.css" rel="stylesheet" media="screen" />
     <script src="<?php echo $templateUrl ?>/js/build/vendors.min.js"></script>
+
+    <jdoc:include type="head" />
 
     <base href="/" />
     <!--[if lte IE 8]><link href="<?php echo $templateUrl ?>/css/ie.css" rel="stylesheet" /><![endif]-->
@@ -97,8 +80,7 @@ $showContentBottom = $this->countModules('content-bottom');
     <link rel="icon" type="image/png" href="<?php echo $templateUrl ?>/images/favicon/favicon-16x16.png" sizes="16x16" />
     <meta name="application-name" content="Judicial Engagement Network" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="<?php echo $templateUrl ?>/images/favicon/mstile-144x144.png" />
-
+    <meta name="msapplication-TileImage" content="<?php echo $templateUrl ?>/images/favicon/mstile-144x144.png" />    
 
 </head>
 <body <?php echo ($isHome ? 'class="home"': "") ?>>
@@ -124,77 +106,48 @@ $showContentBottom = $this->countModules('content-bottom');
             </a>
 
             <section class="header-right">
-                <!--<button type="button">
-                    Search
-                </button>-->
-
-                <input type="checkbox" id="button" class="hidden"/>
-                <label for="button" onclick class="search-toggle">
-   
-                        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 406 422" overflow="auto" role="presentation">
+                <!--Search Button-->
+                <input type="checkbox" id="button-search" class="hidden"/>
+                <label for="button-search" onclick class="search-toggle" role="button" aria-controls="mod-search-searchword">  
+                        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 406 422" overflow="auto" role="button">
                             <g>
                                 <path d="M271.8 147.5c0-71.9-58.3-130.3-130.3-130.3-71.9 0-130.3 58.3-130.3 130.3 0 71.9 58.3 130.3 130.3 130.3 27.8 0 53.6-8.7 74.7-23.5l18.2 18.2 29.5-29.5-17.9-17.9c16.3-21.7 25.8-48.5 25.8-77.6zm-205 74.7c-20-20-31-46.5-31-74.7 0-28.2 11-54.8 31-74.7 20-20 46.5-31 74.7-31 28.2 0 54.8 11 74.7 31 20 20 31 46.5 31 74.7s-11 54.8-31 74.7c-20 20-46.5 31-74.7 31s-54.7-11-74.7-31zM368.5 404.7l-122.6-133 17.4-17.4 131.4 124.2"></path>
                             </g>
                         </svg>
-
                 </label>
-
-
 
                 <jdoc:include type="modules" name="header-right" />
             </section>
 
-            <!--<button type="button" class="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                MENU
-            </button>-->
 
     </header>
     <!--Nav-->
         <nav class="nav-main">
-            <a href="#reveal-nav" id="reveal-nav" class="nav-toggle nav-toggle-reveal button-yellow">Main Menu</a>
-            <a href="#hide-nav" id="hide-nav" class="nav-toggle nav-toggle-hide button-yellow">Close</a>
+            <a href="#reveal-nav" id="reveal-nav" class="nav-toggle nav-toggle-reveal button-yellow" role="button" aria-controls="nav">Main Menu</a>
+            <a href="#hide-nav" id="hide-nav" class="nav-toggle nav-toggle-hide button-yellow" role="button" aria-controls="nav">Close</a>
             <jdoc:include type="modules" name="main-nav" />
             <button type="button" class="button-yellow login-button">MEMBER LOGIN</button>
         </nav>
     <!--Hero Image-->
     <?php if($isHome): ?>
     <section class="hero">
-        <picture>
-            <source media="(max-width: 767px)"
-            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_320.jpg 320w, <?php echo $templateUrl ?>/images/hero/row_of_kids_569.jpg 569w, <?php echo $templateUrl ?>/images/hero/row_of_kids_768.jpg 768w">
-            <source media="(min-width: 768px) and (max-width: 991px)"
-            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_1747.jpg">
-            <source media="(min-width: 992px) and (max-width: 1273px)"
-            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_2621.jpg">
-            <source media="(min-width: 1274px)"
-            srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_3494.jpg">
-            <img srcset="<?php echo $templateUrl ?>/images/hero/row_of_kids_3494.jpg 3494w"
-            src="<?php echo $templateUrl ?>/images/hero/row_of_kids_3494.jpg"
-            alt="Row of kids laying on white floor"
-            title="Happy Group of Kids" />
-        </picture>
-
-        <div class="hero-text-wrapper">
-            <div class="hero-text hero-text-1 reveal">
-                Healing Individuals,
-                <br />Families & Communities
-            </div>
-            <div class="hero-text hero-text-2">Informed Decision Making</div>
-            <div class="hero-text hero-text-3">Linked Systems of Care</div>
-        </div>
+        <jdoc:include type="modules" name="hero" />
     </section>
     <?php endif; ?>
 
-    <!--Content-->
-    <div class="container">
+    <div class="message">
         <jdoc:include type="message" />
-        <main>
-            <jdoc:include type="component" />
-        </main>
     </div>
 
+    <!--Content-->
+    <main class="container">
+        <jdoc:include type="component" />
+    </main>
+
+
     <?php if($showContentBottom): ?>
-    <div class="bkgd-gray-light">
+    <!--Content Bottom-->
+    <div class="bkgd-blue">
         <div class="container">
             <jdoc:include type="modules" name="content-bottom" />
         </div>
@@ -231,6 +184,6 @@ $showContentBottom = $this->countModules('content-bottom');
     </footer>
 
     </div>
-    <script src="<?php echo $templateUrl ?>/js/build/main.min.js"></script>
+    <!--<script src="<?php echo $templateUrl ?>/js/build/main.min.js"></script>-->
 </body>
 </html>

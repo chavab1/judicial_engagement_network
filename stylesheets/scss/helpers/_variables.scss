@@ -9,17 +9,17 @@ $color__gray--light: #e9e7e8;
 
 /*FONTS*/
 $base__font-size: 16px;
-$base__line-height: 18px;
+$base__line-height: 22px;
 
 $font__body: CarroisGothic, Arial, sans-serif;
 $font__medium: GothamMedium, Arial, sans-serif;
 $font__condensed: GothamCondensed, Arial, sans-serif;
 
-$container__width: 1368px;
+$container__width: 1208px;
 $mobile__wide: 580px;
 $tablet: 768px;
 $desktop: 920px;
-$desktop__wide: 1200px;
+$desktop__wide: 1368px;
 
 /*GRID*/
 $susy: (
@@ -27,14 +27,11 @@ $susy: (
     container: $container__width,
     gutters: 1/4,
     global-box-sizing: border-box,
-
     debug: (
         image: show,
         output: overlay
     ),
-    use-custom: (
-        clearfix: true,
-    )
+
 );
 
 $susy-media: (

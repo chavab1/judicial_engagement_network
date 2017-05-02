@@ -71,6 +71,7 @@
     transform: scaleY(0);
     transform-origin: center top;
     transition: transform .4s ease;
+    z-index: index($elements, main-nav);
     @include susy-media('mobile-wide') {
         position: relative;
         top: 0;
@@ -87,7 +88,7 @@
         right: 10px;
     }
     @include susy-media('tablet') {
-        top: 4px;
+        top: 3px;
         right: 20px;
     }
 }

@@ -1,0 +1,18 @@
+﻿.home {
+    .bkgd-blue {
+        padding: 20px 0;
+        @include susy-media('tablet') {
+            padding: 40px 0;
+        }
+        section {
+            margin: 0 0 20px;
+            @include susy-media('tablet') {
+                margin: 0;
+                @include span(6);
+                &:last-child {
+                    @include span(6 last)
+                }
+            }
+        }
+    }
+}

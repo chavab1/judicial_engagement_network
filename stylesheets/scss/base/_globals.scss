@@ -13,6 +13,10 @@ ol, ul, li {
 	list-style:inside none;
 }
 
+p {
+    margin: 0 0 16px;
+}
+
 a {
     text-decoration: none;
 }
@@ -25,6 +29,75 @@ a {
 }
 
 .wrapper {
-    @include container;
+    max-width: 1368px;
+    margin: 0 auto;
     background: #f6f6f6;
+}
+
+img {
+    max-width: 100%;
+}
+
+main {
+    margin: 30px 0 30px;
+    @include susy-media('tablet') {
+        margin: 60px 0 60px;
+    }
+}
+
+.container {
+    padding: 0 10px;
+    @include container;
+    @include susy-media('tablet') {
+        padding: 0 20px;
+    }
+    @include susy-media('desktop-wide') {
+        padding: 0;
+    }
+}
+
+
+.bkgd-blue {
+    background: $color__primary;
+    color: #FFF;
+    h1, h2 {
+        color: $color__trim;
+    }
+}
+
+
+.custom {
+    @include clearfix;
+}
+
+%border-sides {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    &:before, &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        position: absolute;
+        height: 0;    
+        top: 50%;    
+    }
+}
+
+.border-sides-right {
+    @extend %border-sides;
+    padding: 0 10px 0 0;
+    &:after {
+        left: 100%;
+        border-top: 2px solid $color__trim;
+    }
+}
+
+.border-sides-left {
+    @extend %border-sides;
+    padding: 0 0 0 10px;
+    &:after {
+        right: 100%;
+        border-top: 2px solid $color__trim;
+    }
 }

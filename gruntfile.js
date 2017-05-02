@@ -16,7 +16,7 @@ module.exports = function (grunt) {
                     sourceMap: true
                 },
                 files: {
-                    'js/build/vendors.min.js': ['js/vendors/jquery-2.2.4.min.js', 'js/vendors/modernizr-3.4.0.min.js', 'js/vendors/bootstrap.min.js', 'js/vendors/picturefill-3.0.2.min.js', 'js/vendors/svgxuse.js']
+                    'js/build/vendors.min.js': ['js/vendors/jquery-2.2.4.min.js', 'js/vendors/jquery-migrate-1.4.1.min.js', 'js/vendors/modernizr-3.4.0.min.js', 'js/vendors/picturefill-3.0.2.min.js', 'js/vendors/svgxuse.js']
                 }
             },
             main: {
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
             options: {
                 map: true,
                 processors: [
-                    require('autoprefixer')({ browsers: 'last 4 versions' }), // add vendor prefixes
+                    require('autoprefixer'), // add vendor prefixes
                     require('cssnano')() // minify the result
                 ]
             },
