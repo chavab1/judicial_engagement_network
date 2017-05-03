@@ -13,6 +13,7 @@
         text-align: center;
     }
     li {
+        margin: 0;
         @include susy-media('mobile-wide') {
             display: inline-block;
             float: left;
@@ -57,41 +58,43 @@
                     transform: scaleY(1);
                 }
             }
-        }                    
-    }
-}
-
-
-.nav.menu {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    background: #142539;
-    transform: scaleY(0);
-    transform-origin: center top;
-    transition: transform .4s ease;
-    z-index: index($elements, main-nav);
-    @include susy-media('mobile-wide') {
-        position: relative;
-        top: 0;
-        background: none;
-        transform: scaleY(1);
-    }
-}
-
-.login-button {
-    float: right;
-    @include susy-media('mobile-wide') {
+        } //a                    
+    } //li
+    .nav.menu {
         position: absolute;
-        top: 6px;
-        right: 10px;
-    }
-    @include susy-media('tablet') {
-        top: 3px;
-        right: 20px;
-    }
+        top: 40px;
+        left: 0;
+        width: 100%;
+        background: #142539;
+        transform: scaleY(0);
+        transform-origin: center top;
+        transition: transform .4s ease;
+        z-index: index($elements, main-nav);
+        @include susy-media('mobile-wide') {
+            position: relative;
+            top: 0;
+            background: none;
+            transform: scaleY(1);
+        }
+    } //.nav.menu
+    .login-button {
+        float: right;
+        @include susy-media('mobile-wide') {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+        }
+        @include susy-media('tablet') {
+            top: 3px;
+            right: 20px;
+        }
+    }// .login-button
 }
+
+
+
+
+
 
 
 a.nav-toggle {

@@ -1,5 +1,6 @@
 ﻿body {
     font: #{$base__font-size}/#{$base__line-height}  $font__body;
+    color: #222222;
     background: #282828;
     -webkit-animation: bugfix infinite 1s; // To fix checkbox hack
 }
@@ -13,12 +14,21 @@ ol, ul, li {
 	list-style:inside none;
 }
 
+li {
+    margin: 0 0 10px;
+}
+
 p {
     margin: 0 0 16px;
 }
 
 a {
     text-decoration: none;
+}
+
+hr {
+    height: 1px;
+    margin: 20px 0;
 }
 
 ::selection {
@@ -48,6 +58,7 @@ main {
 .container {
     padding: 0 10px;
     @include container;
+    @include clearfix;
     @include susy-media('tablet') {
         padding: 0 20px;
     }
@@ -89,7 +100,7 @@ main {
     padding: 0 10px 0 0;
     &:after {
         left: 100%;
-        border-top: 2px solid $color__trim;
+        border-top: 1px solid $color__trim;
     }
 }
 
@@ -98,6 +109,6 @@ main {
     padding: 0 0 0 10px;
     &:after {
         right: 100%;
-        border-top: 2px solid $color__trim;
+        border-top: 1px solid $color__trim;
     }
 }

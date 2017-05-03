@@ -1,8 +1,11 @@
 ﻿
 
 
-input:not([type='submit']) {
-    padding: 16px 10px;
+input:not([type='submit']):not([type='hidden']), textarea {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 13px 10px;
+    color: #222222;
     background: $color__gray;
     transition: background .3s ease;
     &:focus {
@@ -12,11 +15,13 @@ input:not([type='submit']) {
 
 .search {
     display: inline-block;
+    color: #222222;
     form {
         @include susy-clearfix;
     }
     input[type="search"] {
         height: 48px;
+        margin: 0;
     }
 }
 

@@ -34,7 +34,7 @@
         z-index: 1;
         color: #FFF;
 		@include susy-media('tablet') {
-			padding: 10px 12px;
+			padding: 10px 24px;
             font-size: 16px;
 		}
 	    &:after {
@@ -62,13 +62,12 @@
 
 
 
-
-
-
-
-
-
-
 .button-yellow {
     @include button($color__trim);
+}
+
+
+
+.button-gray {
+    @include button(#acbbc0);
 }

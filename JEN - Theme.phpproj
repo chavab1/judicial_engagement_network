@@ -36,6 +36,7 @@
     <Folder Include="stylesheets\scss\helpers\" />
     <Folder Include="stylesheets\scss\layout\" />
     <Folder Include="stylesheets\scss\components\" />
+    <Folder Include="stylesheets\scss\pages\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\CarroisGothic.eot" />
@@ -55,6 +56,8 @@
     <Content Include="html\mod_search\index.html" />
     <Content Include="images\logo_jen.png" />
     <Content Include="images\svgs\logo_jen.svg" />
+    <Content Include="js\jquery-migrate-1.4.1.min.js" />
+    <Content Include="js\main.js" />
     <Content Include="language\en-GB\en-GB.tpl_jen.sys.ini" />
     <Content Include="language\en-GB\en-GB.tpl_jen.ini" />
     <Content Include="language\en-GB\index.html" />
@@ -70,8 +73,10 @@
     <Content Include="stylesheets\scss\helpers\_functions.scss" />
     <Content Include="stylesheets\scss\helpers\_mixins.scss" />
     <Content Include="stylesheets\scss\helpers\_variables.scss" />
+    <Content Include="stylesheets\scss\layout\_footer.scss" />
     <Content Include="stylesheets\scss\layout\_forms.scss" />
     <Content Include="stylesheets\scss\layout\_header.scss" />
+    <Content Include="stylesheets\scss\pages\_home.scss" />
     <Content Include="stylesheets\scss\layout\_navigation.scss" />
     <Content Include="stylesheets\scss\styles.scss" />
     <Content Include="templateDetails.xml" />

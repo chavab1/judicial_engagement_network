@@ -156,30 +156,24 @@ $showContentBottom = $this->countModules('content-bottom');
 
     <!--Footer-->
     <footer>
-        <div class="footer-inner container">
-            <div class="row">
-                <section class="col-md-4 footer-1 clearfix">
+        <div class="container">
+            <hr /><br />
+            <div class="footer-left">
+                <div class="footer-top">
                     <jdoc:include type="modules" name="footer-1" style="xhtml" />
-                </section>
-                <section class="col-md-4 footer-2 border-white">
-                    <jdoc:include type="modules" name="footer-2" style="xhtml" />
-                </section>
-                <section class="col-md-4 footer-branding">
-                    <a href="/" title="Go to Home Page">
-                        <svg role="presentation">
-                            <title>Vision 21 OVC-Funded Project Logo</title>
-                            <use xlink:href="<?php echo $templateUrl ?>/images/svgs/sprite.svg#logo-vision-21"></use>
-                        </svg>
-                        <!--[if lt IE 8]><img src="<?php echo $templateUrl ?>/images/logo_vision_21.png" alt="Vision 21 Logo"/><![endif]-->
-                    </a>
-                </section>
-            </div>
-            <section class="row disclaimer">
-                <div class="col-xs-12">
+                    <div class="footer-2">
+                        <jdoc:include type="modules" name="footer-2" />
+                        <button type="button" class="button-yellow login-button">MEMBER LOGIN</button>
+                    </div>
+                </div>
+                <hr />
+                <div class="footer-bottom">
                     <jdoc:include type="modules" name="footer-3" />
                 </div>
-            </section>
-
+            </div>
+            <div class="footer-right">
+                <jdoc:include type="modules" name="footer-4" style="xhtml" />
+            </div>
         </div>
     </footer>
 

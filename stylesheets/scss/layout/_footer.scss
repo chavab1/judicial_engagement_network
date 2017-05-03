@@ -1,0 +1,61 @@
+﻿footer {
+    padding: 20px 0 60px;
+    color: $color__gray;
+    background: #142539;
+    a {
+        color: $color__gray;
+        font: 20px/18px $font__condensed;
+        text-transform: uppercase;
+    }
+    h3 {
+        margin-top: 0;
+        color: #FFF;
+        font: 20px/18px $font__medium;
+    }
+    hr {
+        background: $color__gray;
+    }
+    .login-button {
+        margin: 20px 0;
+    }
+}
+
+.footer-top {
+    @include clearfix;
+    .moduletable {
+        @include susy-media('tablet') {
+            @include span(3);
+        }
+    }
+}
+
+.footer-2 {
+    text-align: center;
+    @include susy-media('tablet') {
+        @include span(6 last);
+    }
+}
+
+.footer-left {
+    @include susy-media('tablet') {
+        @include span(8);
+    }
+}
+
+.footer-right {
+    @include susy-media('tablet') {
+        @include span(4 last);
+    }
+    .moduletable {
+        padding: 20px;
+        background: #213349;
+        text-align: center;
+    }
+    input, textarea {
+        width: 100%;
+    }
+}
+
+.footer-bottom {
+    @include clearfix;
+}
