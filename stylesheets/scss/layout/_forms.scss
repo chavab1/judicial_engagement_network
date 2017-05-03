@@ -16,17 +16,21 @@ input:not([type='submit']):not([type='hidden']), textarea {
 .search {
     display: inline-block;
     color: #222222;
+    @include susy-clearfix;
     form {
+        display: inline-block;
         @include susy-clearfix;
     }
     input[type="search"] {
+        float: left;
+        max-width: 76%;
         height: 48px;
         margin: 0;
     }
 }
 
 .search-button {
-    float: right;
+    float: left;
     width: 48px;
     height: 48px;
     fill: $color__gray;

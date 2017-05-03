@@ -29,8 +29,16 @@ h2, h3, h4 {
 }
 
 
+h4 {
+    margin: 10px 0;
+
+}
+
 h1, h2 {
     font-family: $font__condensed;
+    @include susy-media('tablet') {
+        margin: 16px 0;
+    }
 }
 
 

@@ -18,12 +18,34 @@
     .login-button {
         margin: 20px 0;
     }
+    .search {
+        width: 100%;
+        margin: 0 0 20px;
+        @include susy-media('tablet') {
+            width: auto;
+        }
+        form {
+            @include susy-media('tablet') {
+                width: 88%;
+            }
+            @include susy-media('desktop') {
+                width: 100%;
+            }
+        }
+        input[type='search'] {
+            width: 268px;
+        }
+    }// search
 }
 
 .footer-top {
     @include clearfix;
     .moduletable {
+        margin: 0 0 20px;
+        text-align: center;
         @include susy-media('tablet') {
+            margin: 0;
+            text-align: left;
             @include span(3);
         }
     }
@@ -58,4 +80,44 @@
 
 .footer-bottom {
     @include clearfix;
+    .site-branding {
+        display: block;
+        width: 220px;
+        margin: 0 auto 20px;
+        @include susy-media('mobile-wide') {
+            margin-bottom: 0;
+            @include span(5);
+        }
+        @include susy-media('tablet') {
+            @include span(6);
+        }
+        @include susy-media('desktop') {
+            @include span(5);
+        }
+        @include susy-media('desktop-wide') {
+            @include span(4);
+        }
+        svg {
+            width: 220px;
+            height: 94px;
+        }
+    }
+    .custom {
+        margin-bottom: 20px;
+        @include susy-media('mobile-wide') {
+            margin-bottom: 0;
+            @include span(7 last)
+        }  
+        @include susy-media('tablet') {
+            @include span(6 last)
+        }        
+        @include susy-media('desktop') {
+            @include span(7 last)
+        }   
+        @include susy-media('desktop-wide') {
+            @include span(8 last)
+        }   
+    }
 }
+
+

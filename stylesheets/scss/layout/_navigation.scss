@@ -88,6 +88,9 @@
             top: 3px;
             right: 20px;
         }
+        @include susy-media('desktop-wide') {
+            right: 80px;
+        }
     }// .login-button
 }
 
