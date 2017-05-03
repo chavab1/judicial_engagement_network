@@ -28,6 +28,7 @@
     <position>footer-1</position>
     <position>footer-2</position>
     <position>footer-3</position>
+    <position>footer-4</position>
   </positions>
 
   <languages folder="language">
