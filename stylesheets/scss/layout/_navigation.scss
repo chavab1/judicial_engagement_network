@@ -50,6 +50,9 @@
                 padding: 10px 40px;
                 font-size: 26px;
             }
+            &:before {
+                display: none;
+            }
             &:after {
                 content: '';
                 position: absolute;
