@@ -135,9 +135,9 @@ $showContentBottom = $this->countModules('content-bottom');
     </section>
     <?php endif; ?>
 
-    <div class="message">
-        <jdoc:include type="message" />
-    </div>
+        <div class="system-message-container">
+            <jdoc:include type="message"></jdoc:include>
+        </div>
 
     <!--Content-->
     <main class="container">
@@ -185,6 +185,6 @@ $showContentBottom = $this->countModules('content-bottom');
     </footer>
 
     </div>
-    <!--<script src="<?php echo $templateUrl ?>/js/build/main.min.js"></script>-->
+    <script src="<?php echo $templateUrl ?>/js/build/main.min.js"></script>
 </body>
 </html>

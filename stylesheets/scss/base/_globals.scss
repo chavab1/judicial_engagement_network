@@ -10,8 +10,28 @@
   to {padding:0;} 
 }
 
-ol, ul, li {
+ul, ol {
+    margin: 20px 0;
+}
+
+ul, ol, li {
 	list-style:inside none;
+}
+
+ul {
+    li {
+        position: relative;
+        padding: 0 0 0 12px;
+        &:before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            position: absolute;
+            top: 8px;
+            left: 0;    
+            background: $color__trim;        
+        }
+    }
 }
 
 li {
@@ -23,7 +43,39 @@ p {
 }
 
 a {
+    position: relative;
     text-decoration: none;
+    transition: all .3s ease;
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        border-top: 1px solid $color__trim--dark;
+        transition: all .3s ease;
+    }
+    &:before {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        border-top: 1px solid $color__primary--dark;
+        transition: all .3s ease;
+    }
+    &:hover {
+        &:after {
+            width: 0;
+        }
+        &:before {
+            width: 100%;
+        }
+    }
 }
 
 hr {
@@ -67,6 +119,9 @@ main {
     }
 }
 
+.text-center {
+    text-align: center;
+}
 
 .bkgd-blue {
     background: $color__primary;
@@ -115,4 +170,8 @@ main {
 
 .site-branding {
     fill: #FFF;
+    &:before, &:after {
+        display: none;
+    }
 }
+

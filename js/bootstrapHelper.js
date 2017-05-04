@@ -10,7 +10,7 @@
  * -------------------------------------- */
 
 
-lsof.bootstrapHelper = lsof.bootstrapHelper || {
+jen.bootstrapHelper = jen.bootstrapHelper || {
 
 	/* -------------- Settings ---------------*/
 
@@ -164,7 +164,7 @@ lsof.bootstrapHelper = lsof.bootstrapHelper || {
 		if(jQuery(parent).length){
 			// print the alert to the screen
 			jQuery(parent).prepend(alrt);
-
+			jQuery(parent).addClass('overlay');
 			// check if the parent scrolls, if not, scroll the document body
 			var element_to_scroll = jQuery(parent);
 			var scroll_offset = this.parent_scroll_offset;
@@ -193,7 +193,7 @@ lsof.bootstrapHelper = lsof.bootstrapHelper || {
 				// TO DO: Fix this. By calling removeAlert in this manner, it breaks our ability
 				// to use this code in other places without first editing this line. It is my intent
 				// that only line 13 should require changes.
-				lsof.bootstrapHelper.removeAlert(parent);
+				jen.bootstrapHelper.removeAlert(parent);
 			}, aliveTime);
 		}
 	},
@@ -206,7 +206,7 @@ lsof.bootstrapHelper = lsof.bootstrapHelper || {
 	removeAlert: function(parent){
 		jQuery(parent).children('.alert').remove();
 		if(this.joomla){
-			jQuery(parent).children('#system-message-container').html('');
+			jQuery(parent).children('.system-message-container').html('');
 		}
 	},
 
@@ -259,8 +259,6 @@ lsof.bootstrapHelper = lsof.bootstrapHelper || {
 					break;
 			}
 
-			// add the necessary markup
-			obj.parent().append('<span class="glyphicon glyphicon-' + glyphiconName + ' form-control-feedback"></span>');
 		}
 	},
 
@@ -269,7 +267,6 @@ lsof.bootstrapHelper = lsof.bootstrapHelper || {
 	 */
 	hideAllValidationStates: function(){
 		jQuery('.form-group').removeClass('has-error has-warning has-success has-feedback');
-		jQuery('.form-control-feedback').remove();
 	},
 
 	/**
@@ -286,8 +283,6 @@ lsof.bootstrapHelper = lsof.bootstrapHelper || {
 		// remove the class from the form-group
 		obj.closest('.form-group').removeClass('has-error has-warning has-success has-feedback');
 
-		// remove the icon
-		obj.siblings('.form-control-feedback').remove();
 	},
 
 	/**

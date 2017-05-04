@@ -1,4 +1,14 @@
-﻿.nav-main {
+﻿ul.nav.menu {
+    margin: 0;
+    li {
+        padding: 0;
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.nav-main {
     position: relative;   
     padding: 4px 10px;
     background: $color__primary;

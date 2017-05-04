@@ -11,7 +11,7 @@
  * -------------------------------------- */
 
 
-lsof.validate = lsof.validate || {
+jen.validate = jen.validate || {
 
 
 	/* --------- Regular Expressions -------- */
@@ -444,19 +444,19 @@ lsof.validate = lsof.validate || {
 	  */ 
 	 validationResult: function(result, obj, showState){
 	 	// hide any old validation states
-	 	lsof.bootstrapHelper.hideValidationState(obj);
+	 	jen.bootstrapHelper.hideValidationState(obj);
 
 	 	// show the proper validation state	
 		if(result){
 			// valid
 			if(showState > 1){
-				lsof.bootstrapHelper.showValidationState(obj, 'success', true);
+				jen.bootstrapHelper.showValidationState(obj, 'success', true);
 			}
 			return true;
 		}else{
 			// not valid
 			if(showState && showState != 2){
-				lsof.bootstrapHelper.showValidationState(obj, 'error', true);
+				jen.bootstrapHelper.showValidationState(obj, 'error', true);
 			}
 			return false;
 		}

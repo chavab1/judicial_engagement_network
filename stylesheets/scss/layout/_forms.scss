@@ -3,7 +3,6 @@
 
 input:not([type='submit']):not([type='hidden']), textarea {
     display: inline-block;
-    margin: 0 0 16px;
     padding: 13px 10px;
     color: #222222;
     background: $color__gray;
@@ -11,6 +10,10 @@ input:not([type='submit']):not([type='hidden']), textarea {
     &:focus {
         background: #FFF;
     }
+}
+
+.form-group {
+    margin: 0 0 16px;
 }
 
 .search {
@@ -25,7 +28,6 @@ input:not([type='submit']):not([type='hidden']), textarea {
         float: left;
         max-width: 76%;
         height: 48px;
-        margin: 0;
     }
 }
 
@@ -47,6 +49,95 @@ input:not([type='submit']):not([type='hidden']), textarea {
     }
 }
 
-.test {
-    background: linear-gradient(red, 30%, blue);
+.has-error {
+    input:not([type='submit']):not([type='hidden']), textarea {
+        background: #c34545;
+        color: #FFF;
+    }
+}
+
+.system-message-container.overlay {
+    position: fixed;
+    width: 90%;
+    max-height: 800px;
+    top: 10%;
+    left: 5%;
+    z-index: index($elements, alert);
+    @include susy-media('mobile-wide') {
+        max-height: 400px;
+    }
+    @include susy-media('desktop') {
+        top: 25%;
+        width: 65%;
+        left: 17.5%;
+    }
+    @include susy-media('desktop-wide') {
+        width: 50%;
+        left: 25%;
+    }
+}
+
+.alert {
+    padding: 20px;
+    text-align: center;
+    &:before {
+        content: '';
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: #000;
+        opacity: .65;
+    }
+    h4 {
+        font: 22px/20px $font__medium;
+    }
+    ul {
+        text-align: left;
+    }
+}
+
+.alert-info, .alert-warning {
+    background: $color__trim--dark;
+    .close {
+        border-color: #222;
+        &:hover {
+            background: $color__trim;
+        }
+    }
+}
+
+.alert-danger, .alert-success {
+    color: #FFF;
+    .close {
+        border-color: #FFF;
+    }
+}
+
+.alert-danger {
+    background:  #c34545;
+    .close:hover {
+        background: #d51b1b;
+    }
+}
+
+.alert-success {
+    background: $color__primary;
+    .close:hover {
+        background: $color__primary--dark;
+    }
+}
+
+.close {
+    float: right;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    font: 26px/16px $font__medium;
+    transition: all .3s ease;
+    &:hover {
+        border: 1px solid transparent;
+    }
 }
