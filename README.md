@@ -1,2 +1,4 @@
-# judicial_engagement_network
-Judicial Engagement Network theme
+# Judicial Engagement Network
+Judicial Engagement Network Joomla Theme
+
+@copyright (C) 2017 NCJFCJ
