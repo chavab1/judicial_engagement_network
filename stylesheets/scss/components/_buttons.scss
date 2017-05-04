@@ -29,6 +29,7 @@
         padding: 6px 8px;
         font: 14px $font__medium;
         text-transform: uppercase;
+        text-decoration: none;
         transition: color .3s ease;
         position: relative;
         z-index: 1;
@@ -37,6 +38,9 @@
 			padding: 10px 24px;
             font-size: 16px;
 		}
+        &:before {
+            display: none;
+        }
 	    &:after {
 		    content: '';
 		    position: absolute;
@@ -44,7 +48,9 @@
 		    width: 100%;
 		    height: 100%;
 		    bottom: 0;
+            top: 0;
 		    left: 0;
+            border: none;
 		    z-index: -1;
             transform: scaleY(100%) scaleX(100%);
 	    }
@@ -62,12 +68,12 @@
 
 
 
-.button-yellow {
+a.button-yellow, .button-yellow {
     @include button($color__trim);
 }
 
 
 
-.button-gray {
+a.button-gray, a.button-gray {
     @include button(#acbbc0);
 }
