@@ -1,6 +1,6 @@
 ﻿body {
     font: #{$base__font-size}/#{$base__line-height}  $font__body;
-    color: #222222;
+    color: #222;
     background: #282828;
     -webkit-animation: bugfix infinite 1s; // To fix checkbox hack
 }
@@ -44,6 +44,7 @@ p {
 
 a {
     position: relative;
+    color: #222;
     text-decoration: none;
     transition: all .3s ease;
     &:after {
@@ -78,6 +79,8 @@ a {
     }
 }
 
+
+
 hr {
     height: 1px;
     margin: 20px 0;
@@ -98,6 +101,11 @@ hr {
 
 img {
     max-width: 100%;
+}
+
+button {
+    color: #FFF;
+    background: #acbbc0;    
 }
 
 main {
@@ -123,12 +131,22 @@ main {
     text-align: center;
 }
 
+.bkgd-blue, .bkgd-blue-dark {
+    color: #FFF;
+    a {
+        color: #FFF;
+    }
+}
+
 .bkgd-blue {
     background: $color__primary;
-    color: #FFF;
     h1, h2 {
         color: $color__trim;
     }
+}
+
+.bkgd-blue-dark {
+    background: #142539;
 }
 
 
@@ -165,6 +183,22 @@ main {
     &:after {
         right: 100%;
         border-top: 1px solid $color__trim;
+    }
+}
+
+.pull-right {
+    float: right;
+}
+
+.edit-icon {
+    padding: 0;
+    &:before {
+        display: none;
+    }
+    a {
+        &:before, &:after {
+            display: none;
+        }
     }
 }
 

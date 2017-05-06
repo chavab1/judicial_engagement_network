@@ -79,8 +79,10 @@
     <Content Include="js\vendors\bootstrap.min.js" />
     <Content Include="js\vendors\jquery-2.2.4.min.js" />
     <Content Include="js\vendors\jquery-migrate-1.4.1.min.js" />
+    <Content Include="js\vendors\jquery.easing.min.js" />
     <Content Include="js\vendors\modernizr-3.4.0.min.js" />
     <Content Include="js\vendors\picturefill-3.0.2.min.js" />
+    <Content Include="js\vendors\slider.js" />
     <Content Include="js\vendors\svgxuse.js" />
     <Content Include="language\en-GB\en-GB.tpl_jen.sys.ini" />
     <Content Include="language\en-GB\en-GB.tpl_jen.ini" />
@@ -93,7 +95,10 @@
     <Content Include="stylesheets\scss\base\_globals.scss" />
     <Content Include="stylesheets\scss\base\_reset.scss" />
     <Content Include="stylesheets\scss\base\_typography.scss" />
-    <Content Include="stylesheets\scss\components\_buttons.scss" />
+    <Content Include="stylesheets\scss\base\_buttons.scss" />
+    <Content Include="stylesheets\scss\components\_dropdown.scss" />
+    <Content Include="stylesheets\scss\components\_login-modal.scss" />
+    <Content Include="stylesheets\scss\components\_slideshows.scss" />
     <Content Include="stylesheets\scss\helpers\_functions.scss" />
     <Content Include="stylesheets\scss\helpers\_mixins.scss" />
     <Content Include="stylesheets\scss\helpers\_variables.scss" />

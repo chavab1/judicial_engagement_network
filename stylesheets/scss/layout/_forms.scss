@@ -1,14 +1,15 @@
 ﻿
 
 
-input:not([type='submit']):not([type='hidden']), textarea {
+input:not([type='submit']):not([type='hidden']), textarea, select {
     display: inline-block;
     padding: 13px 10px;
     color: #222222;
-    background: $color__gray;
-    transition: background .3s ease;
+    background: #FFF;
+    border: 1px solid $color__gray;
+    transition: all .3s ease;
     &:focus {
-        background: #FFF;
+        border: 1px solid $color__primary;
     }
 }
 
@@ -50,7 +51,7 @@ input:not([type='submit']):not([type='hidden']), textarea {
 }
 
 .has-error {
-    input:not([type='submit']):not([type='hidden']), textarea {
+    input:not([type='submit']):not([type='hidden']), textarea, select {
         background: #c34545;
         color: #FFF;
     }
@@ -74,6 +75,15 @@ input:not([type='submit']):not([type='hidden']), textarea {
     @include susy-media('desktop-wide') {
         width: 50%;
         left: 25%;
+    }
+}
+
+.has-feedback {
+    input:not([type='submit']):not([type='hidden']), textarea, select {
+        border: none;
+        &:focus {
+            border: none;
+        }
     }
 }
 
@@ -139,5 +149,16 @@ input:not([type='submit']):not([type='hidden']), textarea {
     transition: all .3s ease;
     &:hover {
         border: 1px solid transparent;
+    }
+}
+
+footer, header {
+    input:not([type='submit']):not([type='hidden']), textarea, select {
+        background: $color__gray;
+        border: none;
+        &:focus {
+            background: #FFF;
+            border: none;
+        }
     }
 }
