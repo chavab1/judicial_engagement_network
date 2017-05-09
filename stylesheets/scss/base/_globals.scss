@@ -3,6 +3,10 @@
     color: #222;
     background: #282828;
     -webkit-animation: bugfix infinite 1s; // To fix checkbox hack
+    &.font-large {
+        font-size: $base__font-size + $font-increase;
+        line-height: $base__line-height + $font-increase;
+    }
 }
 
 @-webkit-keyframes bugfix { 

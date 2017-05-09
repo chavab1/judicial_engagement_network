@@ -105,17 +105,18 @@ $showContentBottom = $this->countModules('content-bottom');
             </a>
 
             <section class="header-right">
-                <!--Search Button-->
-                <input type="checkbox" id="btn-search" class="hidden"/>
+                <!--Search Button-->                                               
+              <input type="checkbox" id="btn-search" class="hidden"/>
                 <label for="btn-search" onclick class="search-toggle" role="button" aria-controls="mod-search-searchword">  
                         <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 406 422" overflow="auto" role="button">
                             <g>
                                 <path d="M271.8 147.5c0-71.9-58.3-130.3-130.3-130.3-71.9 0-130.3 58.3-130.3 130.3 0 71.9 58.3 130.3 130.3 130.3 27.8 0 53.6-8.7 74.7-23.5l18.2 18.2 29.5-29.5-17.9-17.9c16.3-21.7 25.8-48.5 25.8-77.6zm-205 74.7c-20-20-31-46.5-31-74.7 0-28.2 11-54.8 31-74.7 20-20 46.5-31 74.7-31 28.2 0 54.8 11 74.7 31 20 20 31 46.5 31 74.7s-11 54.8-31 74.7c-20 20-46.5 31-74.7 31s-54.7-11-74.7-31zM368.5 404.7l-122.6-133 17.4-17.4 131.4 124.2"></path>
                             </g>
                         </svg>
-                </label>
-
+                </label> 
+                  
                 <jdoc:include type="modules" name="header-right" />
+
             </section>
 
 

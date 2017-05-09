@@ -5,8 +5,10 @@ var jen = {};
 // Window Width
 jen.viewport = window.innerWidth;
 
-
+// OnLoad
 jQuery(function() {
+
+	// Login Modal Input Fields
 	jQuery('.login-modal .form-group input').each(function(){
 
 		if(jQuery(this).val()) {
@@ -32,6 +34,12 @@ jQuery(function() {
 				jQuery(this).parent('.form-group').removeClass('filled');			
 		});	
 	})
+
+
+	jQuery('.text-toggle').on('click', function(){
+		jQuery('body').toggleClass('font-large');
+	})
+
 });
 
 
