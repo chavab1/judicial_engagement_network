@@ -1,2 +1,138 @@
-﻿body {
+﻿.modal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: index($elements, modal);
+	display: none;
+	overflow: hidden;
+  &.fade .modal-dialog {
+  	transition: transform .15s ease;
+    transform: translate(0, -25%);
+  }
+  &.in .modal-dialog {
+  	transform: translate(0, 0);
+  }	
 }
+
+.modal-open {
+  overflow: hidden;
+}
+
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+	width: 90%;
+	max-width: 460px;	
+	position: relative;
+	margin: 40px auto;
+}
+
+// Actual modal
+.modal-content {
+	position: relative;
+}
+
+// Modal background
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #000;
+	z-index: index($elements, modal-backdrop);  
+	&.fade {
+		opacity: 0;
+		&.in {
+			opacity: .65;
+		}
+	}
+}
+
+
+.modal-header, .modal-body, .moday-footer {
+	padding: 20px;
+} 
+
+.login-modal {
+	.modal-content {
+		padding: 20px;
+		text-align: center;
+	}
+	li {
+		padding: 0;
+		&:before {
+			display: none;
+		}
+	}
+	a {
+		&:before, &:after {
+			display: none;
+		}
+	}
+}
+
+.login-modal {
+    .form-group:not(.checkbox) {
+        position: relative;        
+        label, input {
+            display: inline-block;
+            transition: all .3s ease;
+        }
+        label {
+            position: absolute;
+            width: 110px;
+            margin-left: -50px;
+            left: 50%;
+            color: #222;
+            font: normal 18px/16px $font__medium;
+            text-transform: uppercase;
+            transform: translateY(19px) scale(1);
+            transform-origin: center top;
+            transition: all .3s ease;
+        }
+        input {
+            width: 100%;
+            height: 60px;    
+            transition: all .3s ease; 
+            border: none;       
+        }
+        &.focus, &.filled {
+            label {
+                color: #FFF;
+                transform: translateY(1px) scale(.75);
+            }   
+            input {
+                border-top: 14px solid $color__primary;     
+            }    
+        }
+    }  
+    a:hover {
+    	color: $color__trim;
+    }  
+}
+
+html.no-csstransforms {
+	.login-modal {
+		.form-group:not(.checkbox) {
+			label {
+			top: 19px
+			}
+			&.focus, &.filled {
+				label {
+					top: 0;
+					font-size: 14px;
+				}      
+			}
+		}    
+	}
+
+}
+

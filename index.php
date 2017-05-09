@@ -26,7 +26,6 @@ if($activeMenu == $menu->getDefault()){
 };
 
 
-
 // Stylesheets
 $templateUrl = $this->baseurl.'/templates/'.$this->template;
 
@@ -45,26 +44,7 @@ $showContentBottom = $this->countModules('content-bottom');
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 
-    <?php
 
-    // Generate Meta tags
-    foreach($this->_metaTags as $type => $items){
-        foreach($items as $name => $content){
-            if($name != "content-type" && !empty($content)){
-                echo '<meta name="' . $name . '" content="' . htmlspecialchars($content) . '" />';
-            }
-        }
-    }
-
-    // Generate Description tag
-    $documentDescription = $this->getDescription();
-    if($documentDescription){
-        echo '<meta name="description" content="' . htmlspecialchars($documentDescription) . '" />';
-    }
-    ?>
-
-    <!--Generate Title-->
-    <title><?php echo trim(htmlspecialchars($this->getTitle(), ENT_COMPAT, 'UTF-8')); ?></title>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -81,9 +61,8 @@ $showContentBottom = $this->countModules('content-bottom');
     <link href="<?php echo $templateUrl ?>/stylesheets/css/system_general.css" rel="stylesheet" />
     <link href="<?php echo $templateUrl ?>/stylesheets/css/styles.min.css" rel="stylesheet" media="screen" />
     <script src="<?php echo $templateUrl ?>/js/build/vendors.min.js"></script>
-    <script src="<?php echo $templateUrl ?>/js/build/joomla.min.js"></script>
 
-
+    <jdoc:include type="head"  />
 
     <base href="/" />
     <!--[if lte IE 8]><link href="<?php echo $templateUrl ?>/css/ie.css" rel="stylesheet" /><![endif]-->
@@ -103,356 +82,8 @@ $showContentBottom = $this->countModules('content-bottom');
     <meta name="msapplication-TileImage" content="<?php echo $templateUrl ?>/images/favicon/mstile-144x144.png" />    
 
     <script type="text/javascript">
- Calendar._DN = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]; Calendar._SDN = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat","Sun"]; Calendar._FD = 0; Calendar._MN = ["January","February","March","April","May","June","July","August","September","October","November","December"]; Calendar._SMN = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]; Calendar._TT = {"INFO":"About the Calendar","ABOUT":"DHTML Date\/Time Selector\n(c) dynarch.com 2002-2005 \/ Author: Mihai Bazon\nFor latest version visit: http:\/\/www.dynarch.com\/projects\/calendar\/\nDistributed under GNU LGPL.  See http:\/\/gnu.org\/licenses\/lgpl.html for details.\n\nDate selection:\n- Use the \u00ab and \u00bb buttons to select year\n- Use the < and > buttons to select month\n- Hold mouse button on any of the buttons above for faster selection.","ABOUT_TIME":"\n\nTime selection:\n- Click on any of the time parts to increase it\n- or Shift-click to decrease it\n- or click and drag for faster selection.","PREV_YEAR":"Select to move to the previous year. Select and hold for a list of years.","PREV_MONTH":"Select to move to the previous month. Select and hold for a list of the months.","GO_TODAY":"Go to today","NEXT_MONTH":"Select to move to the next month. Select and hold for a list of the months.","SEL_DATE":"Select a date.","DRAG_TO_MOVE":"Drag to move.","PART_TODAY":" Today ","DAY_FIRST":"Display %s first","WEEKEND":"0,6","CLOSE":"Close","TODAY":"Today","TIME_PART":"(Shift-)Select or Drag to change the value.","DEF_DATE_FORMAT":"%Y-%m-%d","TT_DATE_FORMAT":"%a, %b %e","WK":"wk","TIME":"Time:"};
-        jQuery(document).ready(function (){
-            jQuery('select').chosen({"disable_search_threshold":10,"search_contains":true,"allow_single_deselect":true,"placeholder_text_multiple":"Type or select some options","placeholder_text_single":"Select an option","no_results_text":"No results match"});
-        });
-    
-    Joomla.submitbutton = function(task)
-    {
-        if (task == 'article.cancel' || document.formvalidator.isValid(document.getElementById('adminForm')))
-        {
-            if (tinyMCE.get("jform_articletext").isHidden()) {tinyMCE.get("jform_articletext").show()};
-            Joomla.submitform(task);
-        }
-    }
-
-
-        
-        // Add extra modal close functionality for tinyMCE-based editors
-        document.onreadystatechange = function () {
-            if (document.readyState == 'interactive' && typeof tinyMCE != 'undefined' && tinyMCE)
-            {
-                if (typeof window.jModalClose_no_tinyMCE === 'undefined')
-                {   
-                    window.jModalClose_no_tinyMCE = typeof(jModalClose) == 'function'  ?  jModalClose  :  false;
-                    
-                    jModalClose = function () {
-                        if (window.jModalClose_no_tinyMCE) window.jModalClose_no_tinyMCE.apply(this, arguments);
-                        tinyMCE.activeEditor.windowManager.close();
-                    };
-                }
-        
-                if (typeof window.SqueezeBoxClose_no_tinyMCE === 'undefined')
-                {
-                    if (typeof(SqueezeBox) == 'undefined')  SqueezeBox = {};
-                    window.SqueezeBoxClose_no_tinyMCE = typeof(SqueezeBox.close) == 'function'  ?  SqueezeBox.close  :  false;
-        
-                    SqueezeBox.close = function () {
-                        if (window.SqueezeBoxClose_no_tinyMCE)  window.SqueezeBoxClose_no_tinyMCE.apply(this, arguments);
-                        tinyMCE.activeEditor.windowManager.close();
-                    };
-                }
-            }
-        };
-        
-jQuery(function($){ $(".hasPopover").popover({"html": true,"trigger": "hover focus","container": "body"}); });
-            function jSelectArticle(id, title, catid, object, link, lang)
-            {
-                var hreflang = '';
-                if (lang !== '')
-                {
-                    var hreflang = ' hreflang = "' + lang + '"';
-                }
-                var tag = '<a' + hreflang + ' href="' + link + '">' + title + '</a>';
-                jInsertEditorText(tag, 'jform_articletext');
-                jModalClose();
-            }
-            function insertReadmore(editor)
-            {
-                var content = tinyMCE.activeEditor.getContent();
-                if (content.match(/<hr\s+id=("|')system-readmore("|')\s*\/*>/i))
-                {
-                    alert('There is already a Read more ... link that has been inserted. Only one link is permitted. Use {pagebreak} to split the page up further.');
-                    return false;
-                } else {
-                    jInsertEditorText('<hr id="system-readmore" />', editor);
-                }
-            }
-            
-        var setCustomDir    = '';
-        var mediaUploadPath = '';
-        var uploadUri       = 'http://sbdev.judicialengagementnetwork.org/index.php?option=com_media&amp;task=file.upload&amp;tmpl=component&amp;78eaa5b1c1c9f4226773eb6c8f13dffe=9dkbmoefqdmfl46bicqe0fo493&amp;c3a60ec26130fc58f04aa9c42f7c9010=1&amp;asset=image&amp;format=json';
-            
-        window.getSize = window.getSize || function(){return {x: jQuery(window).width(), y: jQuery(window).height()};};
-        tinymce.suffix = '.min';
-        tinymce.baseURL = 'http://sbdev.judicialengagementnetwork.org/media/editors/tinymce';
-        tinymce.init({
-        
-        directionality: "ltr",
-        selector: "textarea#jform_articletext",
-        language : "en",
-        mode : "specific_textareas",
-        autosave_restore_when_empty: false,
-        skin : "lightgray",
-        theme : "modern",
-        schema: "html5",
-        
-        inline_styles : true,
-        gecko_spellcheck : true,
-        entity_encoding : "raw",
-        verify_html: true,
-        force_br_newlines : false, force_p_newlines : true, forced_root_block : 'p',
-        toolbar_items_size: "small",
-        
-        relative_urls : true,
-        remove_script_host : false,
-        
-        content_css : "/templates/system/css/editor.css",
-        document_base_url : "http://sbdev.judicialengagementnetwork.org/",
-        setup: function (editor) {
-            
-            !(function(){
-                var getBtnOptions = new Function("return {handler: \'iframe\', size: {x: 800, y: 500}}"),
-                    btnOptions = getBtnOptions(),
-                    modalWidth = btnOptions.size && btnOptions.size.x ?  btnOptions.size.x : null,
-                    modalHeight = btnOptions.size && btnOptions.size.y ?  btnOptions.size.y : null;
-                editor.addButton("button-0Module", {
-                    text: "Module",
-                    title: "Module",
-                    icon: "none icon-file-add",
-                    onclick: function () {
-                            var modalOptions = {
-                                title  : "Module",
-                                url : 'http://sbdev.judicialengagementnetwork.org/index.php?option=com_modules&amp;view=modules&amp;layout=modal&amp;tmpl=component&amp;editor=jform_articletext&amp;c3a60ec26130fc58f04aa9c42f7c9010=1',
-                                buttons: [{
-                                    text   : "Close",
-                                    onclick: "close"
-                                }]
-                            }
-                            if(modalWidth){
-                                modalOptions.width = modalWidth;
-                            }
-                            if(modalHeight){
-                                modalOptions.height = modalHeight;
-                            }
-                            editor.windowManager.open(modalOptions);
-                    }
-                });
-            })();; 
-            !(function(){
-                var getBtnOptions = new Function("return {handler: \'iframe\', size: {x: 800, y: 500}}"),
-                    btnOptions = getBtnOptions(),
-                    modalWidth = btnOptions.size && btnOptions.size.x ?  btnOptions.size.x : null,
-                    modalHeight = btnOptions.size && btnOptions.size.y ?  btnOptions.size.y : null;
-                editor.addButton("button-1Article", {
-                    text: "Article",
-                    title: "Article",
-                    icon: "none icon-file-add",
-                    onclick: function () {
-                            var modalOptions = {
-                                title  : "Article",
-                                url : 'http://sbdev.judicialengagementnetwork.org/index.php?option=com_content&amp;view=articles&amp;layout=modal&amp;tmpl=component&amp;c3a60ec26130fc58f04aa9c42f7c9010=1',
-                                buttons: [{
-                                    text   : "Close",
-                                    onclick: "close"
-                                }]
-                            }
-                            if(modalWidth){
-                                modalOptions.width = modalWidth;
-                            }
-                            if(modalHeight){
-                                modalOptions.height = modalHeight;
-                            }
-                            editor.windowManager.open(modalOptions);
-                    }
-                });
-            })();; 
-            !(function(){
-                var getBtnOptions = new Function("return {handler: \'iframe\', size: {x: 800, y: 500}}"),
-                    btnOptions = getBtnOptions(),
-                    modalWidth = btnOptions.size && btnOptions.size.x ?  btnOptions.size.x : null,
-                    modalHeight = btnOptions.size && btnOptions.size.y ?  btnOptions.size.y : null;
-                editor.addButton("button-2Image", {
-                    text: "Image",
-                    title: "Image",
-                    icon: "none icon-pictures",
-                    onclick: function () {
-                            var modalOptions = {
-                                title  : "Image",
-                                url : 'http://sbdev.judicialengagementnetwork.org/index.php?option=com_media&amp;view=images&amp;tmpl=component&amp;e_name=jform_articletext&amp;asset=60&amp;author=189',
-                                buttons: [{
-                                    text   : "Close",
-                                    onclick: "close"
-                                }]
-                            }
-                            if(modalWidth){
-                                modalOptions.width = modalWidth;
-                            }
-                            if(modalHeight){
-                                modalOptions.height = modalHeight;
-                            }
-                            editor.windowManager.open(modalOptions);
-                    }
-                });
-            })();; 
-            !(function(){
-                var getBtnOptions = new Function("return {handler: \'iframe\', size: {x: 500, y: 300}}"),
-                    btnOptions = getBtnOptions(),
-                    modalWidth = btnOptions.size && btnOptions.size.x ?  btnOptions.size.x : null,
-                    modalHeight = btnOptions.size && btnOptions.size.y ?  btnOptions.size.y : null;
-                editor.addButton("button-3PageBreak", {
-                    text: "Page Break",
-                    title: "Page Break",
-                    icon: "none icon-copy",
-                    onclick: function () {
-                            var modalOptions = {
-                                title  : "Page Break",
-                                url : 'http://sbdev.judicialengagementnetwork.org/index.php?option=com_content&amp;view=article&amp;layout=pagebreak&amp;tmpl=component&amp;e_name=jform_articletext',
-                                buttons: [{
-                                    text   : "Close",
-                                    onclick: "close"
-                                }]
-                            }
-                            if(modalWidth){
-                                modalOptions.width = modalWidth;
-                            }
-                            if(modalHeight){
-                                modalOptions.height = modalHeight;
-                            }
-                            editor.windowManager.open(modalOptions);
-                    }
-                });
-            })();; 
-            !(function(){
-                var btnOptions = {}, modalWidth = null, modalHeight = null;
-                editor.addButton("button-4ReadMore", {
-                    text: "Read More",
-                    title: "Read More",
-                    icon: "none icon-arrow-down",
-                    onclick: function () {
-
-                        insertReadmore('jform_articletext');return false;
-                            
-                    }
-                });
-            })();
-        },
-        paste_data_images: true,
-        
-            valid_elements : "",
-            extended_valid_elements : "hr[id|title|alt|class|width|size|noshade]",
-            invalid_elements : "script,applet,iframe",
-            // Plugins
-            plugins : "table link code hr charmap autolink lists importcss jdragdrop",
-            // Toolbar
-            toolbar1: "bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | formatselect | bullist numlist | outdent indent | undo redo | link unlink anchor code | hr table | subscript superscript | charmap | button-0Module | button-1Article | button-2Image | button-3PageBreak | button-4ReadMore",
-            removed_menuitems: "newdocument",
-            // Layout
-            importcss_append: true,
-            // Advanced Options
-            resize: "both",
-            height : "550",
-            width : ""
-        });
-            
-        function jInsertEditorText( text, editor )
-        {
-            tinyMCE.activeEditor.execCommand('mceInsertContent', false, text);
-        }
-        
-jQuery(function($){ $(".hasTooltip").tooltip({"html": true,"container": "body"}); });
-        jQuery(document).ready(function (){
-            jQuery('#jform_tags').chosen({"disable_search_threshold":10,"search_contains":true,"allow_single_deselect":true,"placeholder_text_multiple":"Type or select some options","placeholder_text_single":"Select an option","no_results_text":"No results match"});
-        });
-    
-        jQuery(document).ready(function ($) {
-            $('#jform_tags').ajaxChosen({
-                type: 'GET',
-                url: 'http://sbdev.judicialengagementnetwork.org/index.php?option=com_tags&task=tags.searchAjax',
-                dataType: 'json',
-                jsonTermKey: 'like',
-                afterTypeDelay: '500',
-                minTermLength: '3'
-            }, function (data) {
-                var results = [];
-
-                $.each(data, function (i, val) {
-                    results.push({ value: val.value, text: val.text });
-                });
-
-                return results;
-            });
-        });
-    
-        jQuery(document).ready(function ($) {
-
-            var customTagPrefix = '#new#';
-
-            // Method to add tags pressing enter
-            $('#jform_tags_chzn input').keyup(function(event) {
-
-                // Tag is greater than the minimum required chars and enter pressed
-                if (this.value && this.value.length >= 3 && (event.which === 13 || event.which === 188)) {
-
-                    // Search an highlighted result
-                    var highlighted = $('#jform_tags_chzn').find('li.active-result.highlighted').first();
-
-                    // Add the highlighted option
-                    if (event.which === 13 && highlighted.text() !== '')
-                    {
-                        // Extra check. If we have added a custom tag with this text remove it
-                        var customOptionValue = customTagPrefix + highlighted.text();
-                        $('#jform_tags option').filter(function () { return $(this).val() == customOptionValue; }).remove();
-
-                        // Select the highlighted result
-                        var tagOption = $('#jform_tags option').filter(function () { return $(this).html() == highlighted.text(); });
-                        tagOption.attr('selected', 'selected');
-                    }
-                    // Add the custom tag option
-                    else
-                    {
-                        var customTag = this.value;
-
-                        // Extra check. Search if the custom tag already exists (typed faster than AJAX ready)
-                        var tagOption = $('#jform_tags option').filter(function () { return $(this).html() == customTag; });
-                        if (tagOption.text() !== '')
-                        {
-                            tagOption.attr('selected', 'selected');
-                        }
-                        else
-                        {
-                            var option = $('<option>');
-                            option.text(this.value).val(customTagPrefix + this.value);
-                            option.attr('selected','selected');
-
-                            // Append the option an repopulate the chosen field
-                            $('#jform_tags').append(option);
-                        }
-                    }
-
-                    this.value = '';
-                    $('#jform_tags').trigger('liszt:updated');
-                    event.preventDefault();
-
-                }
-            });
-        });
-        
-jQuery(document).ready(function($) {Calendar.setup({
-            // Id of the input field
-            inputField: "jform_publish_up",
-            // Format of the input field
-            ifFormat: "%Y-%m-%d %H:%M:%S",
-            // Trigger for the calendar (button ID)
-            button: "jform_publish_up_img",
-            // Alignment (defaults to "Bl")
-            align: "Tl",
-            singleClick: true,
-            firstDay: 0
-            });});
-jQuery(document).ready(function($) {Calendar.setup({
-            // Id of the input field
-            inputField: "jform_publish_down",
-            // Format of the input field
-            ifFormat: "%Y-%m-%d %H:%M:%S",
-            // Trigger for the calendar (button ID)
-            button: "jform_publish_down_img",
-            // Alignment (defaults to "Bl")
-            align: "Tl",
-            singleClick: true,
-            firstDay: 0
-            });});
+        document.cookie = 'resolution=' + Math.max(screen.width, screen.height) + '; path=/';
+        window.setInterval(function () { var r; try { r = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP") } catch (e) { } if (r) { r.open("GET", "/index.php?option=com_ajax&format=json", true); r.send(null) } }, 3600000);
     </script>
 
 </head>
@@ -499,7 +130,19 @@ jQuery(document).ready(function($) {Calendar.setup({
             <a href="#reveal-nav" id="reveal-nav" class="nav-toggle nav-toggle-reveal btn-primary" role="button" aria-controls="nav">Main Menu</a>
             <a href="#hide-nav" id="hide-nav" class="nav-toggle nav-toggle-hide btn-primary" role="button" aria-controls="nav">Close</a>
             <jdoc:include type="modules" name="main-nav" />
-            <button type="button" class="btn-primary login-button">MEMBER LOGIN</button>
+            <?php
+            $user = JFactory::getUser();
+            if ($user->guest)
+            {
+                echo '<button type="button" class="btn-primary nav-button" data-toggle="modal" data-target="#login-modal">MEMBER LOGIN</button>';
+            }
+            else
+            {
+                $userToken = JSession::getFormToken();
+                echo '<a href="index.php?option=com_users&task=user.logout&' . $userToken . '=1" class="btn-red nav-button">LOGOUT '  . $user->username . '</a>.';
+            }
+            ?>
+
         </nav>
     <!--Hero Image-->
     <?php if($isHome): ?>
@@ -509,7 +152,7 @@ jQuery(document).ready(function($) {Calendar.setup({
     <?php endif; ?>
 
         <div class="system-message-container">
-            <jdoc:include type="message"></jdoc:include>
+            <jdoc:include type="message" />
         </div>
 
     <!--Content-->
@@ -536,7 +179,7 @@ jQuery(document).ready(function($) {Calendar.setup({
                     <jdoc:include type="modules" name="footer-1" style="xhtml" />
                     <div class="footer-2">
                         <jdoc:include type="modules" name="footer-2" />
-                        <button type="button" class="btn-primary login-button">MEMBER LOGIN</button>
+                        <button type="button" class="btn-primary login-button" data-toggle="modal" data-target="#login-modal">MEMBER LOGIN</button>
                     </div>
                 </div>
                 <hr />
@@ -558,8 +201,12 @@ jQuery(document).ready(function($) {Calendar.setup({
     </footer>
 
     </div>
-    <section class="login-modal">
-        <jdoc:include type="modules" name="modal" />
+    <section id="login-modal" class="modal fade login-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bkgd-blue-tone">
+                <jdoc:include type="modules" name="modal" />
+            </div>
+        </div>
     </section>
 
     <script src="<?php echo $templateUrl ?>/js/build/main.min.js"></script>

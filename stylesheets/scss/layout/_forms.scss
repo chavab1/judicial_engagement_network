@@ -119,9 +119,10 @@ input:not([type='submit']):not([type='hidden']), textarea, select {
     }
 }
 
-.alert-danger, .alert-success {
-    color: #FFF;
+.alert-danger, .alert-success {  
+    color: #FFF;  
     .close {
+        color: #FFF;
         border-color: #FFF;
     }
 }
@@ -133,7 +134,7 @@ input:not([type='submit']):not([type='hidden']), textarea, select {
     }
 }
 
-.alert-success {
+.alert-success {    
     background: $color__primary;
     .close:hover {
         background: $color__primary--dark;
@@ -147,8 +148,17 @@ input:not([type='submit']):not([type='hidden']), textarea, select {
     border-style: solid;
     font: 26px/16px $font__medium;
     transition: all .3s ease;
+    color: #222;
+    background: none;
+    cursor: pointer;
     &:hover {
         border: 1px solid transparent;
+    }
+}
+
+a.close {
+    &:before, &:after {
+        display: none;
     }
 }
 
@@ -162,3 +172,4 @@ footer, header {
         }
     }
 }
+
