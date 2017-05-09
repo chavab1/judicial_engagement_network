@@ -1,0 +1,49 @@
+.nav-tabs {
+	@include clearfix;
+	margin: 0;
+	border-bottom: 1px solid $color__gray;
+	li {
+		padding: 0;
+		&:before {
+			display: none;
+		}
+	}
+	> li {
+		display: block;
+		position: relative;
+		float: left;
+		> a {
+			border: 1px solid $color__gray;
+			border-bottom: none;
+		}
+		&.active {
+			> a {
+				color: #FFF;
+				background: $color__gray--dark;	
+				border: 1px solid transparent;
+				border-bottom: none;
+			}
+		}
+		&:hover {
+			> a {
+				color: #FFF;
+				background: $color__gray;
+			}
+		}		
+	}
+	a {
+		&:before, &:after {
+			display: none;
+		}
+	}
+}
+
+.tab-content {
+	padding: 20px;
+	> .tab-pane {
+		display: none;
+	}
+	> .active {
+		display: block;
+	}
+}

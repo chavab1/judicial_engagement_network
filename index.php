@@ -54,16 +54,11 @@ $showContentBottom = $this->countModules('content-bottom');
     <meta charset="utf-8" />
     <meta name="referrer" content="unsafe-url" />
 
-    
- 
-
-
-    <link href="<?php echo $templateUrl ?>/stylesheets/css/system_general.css" rel="stylesheet" />
-    <link href="<?php echo $templateUrl ?>/stylesheets/css/styles.min.css" rel="stylesheet" media="screen" />
-    <script src="<?php echo $templateUrl ?>/js/build/vendors.min.js"></script>
 
     <jdoc:include type="head"  />
-
+    <script src="<?php echo $templateUrl ?>/js/build/vendors.min.js"></script> 
+    <link href="<?php echo $templateUrl ?>/stylesheets/css/system_general.css" rel="stylesheet" />
+    <link href="<?php echo $templateUrl ?>/stylesheets/css/styles.min.css" rel="stylesheet" media="screen" />    
     <base href="/" />
     <!--[if lte IE 8]><link href="<?php echo $templateUrl ?>/css/ie.css" rel="stylesheet" /><![endif]-->
 
@@ -139,7 +134,7 @@ $showContentBottom = $this->countModules('content-bottom');
             else
             {
                 $userToken = JSession::getFormToken();
-                echo '<a href="index.php?option=com_users&task=user.logout&' . $userToken . '=1" class="btn-red nav-button">LOGOUT '  . $user->username . '</a>.';
+                echo '<a href="index.php?option=com_users&task=user.logout&' . $userToken . '=1" class="btn-red nav-button">LOGOUT</a>';
             }
             ?>
 
@@ -203,17 +198,16 @@ $showContentBottom = $this->countModules('content-bottom');
     </div>
     <section id="login-modal" class="modal fade login-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog bkgd-blue-tone" role="document">
-            <div class="modal-header">
-                
+            <div class="modal-header">                
                 <svg role="presentation">
                     <use xlink:href="<?php echo $templateUrl ?>/images/svgs/sprite.svg#icon-lock"></use>
                 </svg>
-                <!--[if lt IE 8]><img src="<?php echo $templateUrl ?>/images/icon_lock.png" alt="Vision 21 Logo"/><![endif]-->             
+                <!--[if lt IE 8]><img src="<?php echo $templateUrl ?>/images/icon_lock.png" alt="Vision 21 Logo"/><![endif]-->                      
             </div>
             <div class="modal-content">
                 <jdoc:include type="modules" name="modal" />
-            </div>
-
+            </div> 
+            <button type="button" class="close" data-dismiss="modal">x</button>                         
         </div>
     </section>
 

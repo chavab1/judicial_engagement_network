@@ -37,6 +37,8 @@ JFactory::getDocument()->addScriptDeclaration("
 	}
 ");
 ?>
+
+
 <div class="edit item-page<?php echo $this->pageclass_sfx; ?>">
 	<?php if ($params->get('show_page_heading')) : ?>
 	<div class="page-header">
@@ -65,17 +67,17 @@ JFactory::getDocument()->addScriptDeclaration("
 			<?php endif; ?>
 		</div>
 		<fieldset>
-			<ul class="nav nav-tabs">
-				<li class="active"><a href="#editor" data-toggle="tab"><?php echo JText::_('COM_CONTENT_ARTICLE_CONTENT') ?></a></li>
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="active" role="presentation"><a href="#editor" aria-controls="editor" data-toggle="tab" role="tab"><?php echo JText::_('COM_CONTENT_ARTICLE_CONTENT') ?></a></li>
 				<?php if ($params->get('show_urls_images_frontend') ) : ?>
-				<li><a href="#images" data-toggle="tab"><?php echo JText::_('COM_CONTENT_IMAGES_AND_URLS') ?></a></li>
+				<li role="presentation"><a href="#images" aria-controls="images" data-toggle="tab" role="tab"><?php echo JText::_('COM_CONTENT_IMAGES_AND_URLS') ?></a></li>
 				<?php endif; ?>
 				<?php foreach ($this->form->getFieldsets('params') as $name => $fieldSet) : ?>
-				<li><a href="#params-<?php echo $name; ?>" data-toggle="tab"><?php echo JText::_($fieldSet->label); ?></a></li>
+				<li role="presentation"><a href="#params-<?php echo $name; ?>" aria-controls="params-<?php echo $name; ?>" data-toggle="tab" role="tab"><?php echo JText::_($fieldSet->label); ?></a></li>
 				<?php endforeach; ?>
-				<li><a href="#publishing" data-toggle="tab"><?php echo JText::_('COM_CONTENT_PUBLISHING') ?></a></li>
-				<li><a href="#language" data-toggle="tab"><?php echo JText::_('JFIELD_LANGUAGE_LABEL') ?></a></li>
-				<li><a href="#metadata" data-toggle="tab"><?php echo JText::_('COM_CONTENT_METADATA') ?></a></li>
+				<li role="presentation"><a href="#publishing" aria-controls="publishing" data-toggle="tab" role="tab"><?php echo JText::_('COM_CONTENT_PUBLISHING') ?></a></li>
+				<li role="presentation"><a href="#language" aria-controls="language" data-toggle="tab" role="tab"><?php echo JText::_('JFIELD_LANGUAGE_LABEL') ?></a></li>
+				<li role="presentation"><a href="#metadata" aria-controls="metadata" data-toggle="tab" role="tab"><?php echo JText::_('COM_CONTENT_METADATA') ?></a></li>
 			</ul>
 
 			<div class="tab-content">
@@ -100,21 +102,21 @@ JFactory::getDocument()->addScriptDeclaration("
 					<?php echo $this->form->renderField('float_fulltext', 'images'); ?>
 					<?php echo $this->form->renderField('urla', 'urls'); ?>
 					<?php echo $this->form->renderField('urlatext', 'urls'); ?>
-					<div class="control-group">
+					<div class="control-group form-group">
 						<div class="controls">
 							<?php echo $this->form->getInput('targeta', 'urls'); ?>
 						</div>
 					</div>
 					<?php echo $this->form->renderField('urlb', 'urls'); ?>
 					<?php echo $this->form->renderField('urlbtext', 'urls'); ?>
-					<div class="control-group">
+					<div class="control-grou form-group">
 						<div class="controls">
 							<?php echo $this->form->getInput('targetb', 'urls'); ?>
 						</div>
 					</div>
 					<?php echo $this->form->renderField('urlc', 'urls'); ?>
 					<?php echo $this->form->renderField('urlctext', 'urls'); ?>
-					<div class="control-group">
+					<div class="control-group form-group">
 						<div class="controls">
 							<?php echo $this->form->getInput('targetc', 'urls'); ?>
 						</div>
@@ -143,7 +145,7 @@ JFactory::getDocument()->addScriptDeclaration("
 					<?php endif; ?>
 					<?php echo $this->form->renderField('access'); ?>
 					<?php if (is_null($this->item->id)):?>
-						<div class="control-group">
+						<div class="control-group form-group">
 							<div class="control-label">
 							</div>
 							<div class="controls">

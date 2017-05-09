@@ -6,6 +6,7 @@ $color__trim--dark: #ce982e;
 $color__gray: #acbbc0;
 $color__gray--dark: #7f898d;
 $color__gray--light: #e9e7e8;
+$color__red: #c34545;
 
 
 /*FONTS*/
@@ -28,12 +29,6 @@ $susy: (
     container: $container__width,
     gutters: 1/4,
     global-box-sizing: border-box,
-  debug: (
-    image: show,
-    output: overlay,
-    toggle: top right,
-  ),
-
 );
 
 $susy-media: (

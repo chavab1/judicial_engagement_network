@@ -68,9 +68,22 @@ a.btn-gray, .btn-gray {
 }
 
 
-
+a.btn-red, .btn-red {
+    @extend .btn;
+    border: 1px solid $color__red;
+    &:after {
+        background: $color__red;
+    }
+    &:hover, &:active {
+        color: $color__red;           
+    }       
+}
 
 .btn-group {
     display: inline-block;
     position: relative;    
+}
+
+.edit .btn-toolbar {
+    margin: 0 0 20px;
 }

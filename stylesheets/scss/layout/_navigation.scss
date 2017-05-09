@@ -1,4 +1,15 @@
-﻿ul.nav.menu {
+﻿.nav {
+    li {
+        margin: 0;
+        a {
+            display: block;
+            position: relative;
+            padding: 10px 24px;                
+        }
+    }
+}
+
+ul.nav.menu {
     margin: 0;
     li {
         padding: 0;
@@ -24,7 +35,6 @@
         text-align: center;
     }
     li {
-        margin: 0;
         @include susy-media('mobile-wide') {
             display: inline-block;
             float: left;
@@ -39,9 +49,6 @@
             }            
         }  
         a {
-            display: block;
-            position: relative;
-            padding: 10px 24px;
             color: #FFF;
             font: 22px $font__condensed;
             text-transform: uppercase;
@@ -92,6 +99,21 @@
             z-index: 1;            
         }
     } //.nav.menu
+    .nav-button {
+        float: right;
+        @include susy-media('mobile-wide') {
+            position: absolute;
+            top: 6px;
+            right: 10px;
+        }
+        @include susy-media('tablet') {
+            top: 3px;
+            right: 20px;
+        }
+        @include susy-media('desktop-wide') {
+            right: 80px;
+        }
+    }// .nav-button    
 }
 
 

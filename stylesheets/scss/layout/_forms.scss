@@ -128,7 +128,7 @@ input:not([type='submit']):not([type='hidden']), textarea, select {
 }
 
 .alert-danger {
-    background:  #c34545;
+    background:  $color__red;
     .close:hover {
         background: #d51b1b;
     }
@@ -171,4 +171,22 @@ footer, header {
         }
     }
 }
+
+.controls {
+    li {
+        padding: 0;
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.chzn-container {
+    min-width: 120px;
+    width: auto !important;
+    input {
+        height: auto !important;
+    }
+}
+
 
