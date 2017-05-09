@@ -25,18 +25,18 @@ JHtml::_('bootstrap.tooltip');
 		<div id="form-login-username" class="form-group">
 			<?php if (!$params->get('usetext')) : ?>
 
-				<label for="modlgn-username" class="element-invisible"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
+				<label for="modlgn-username" class="element-invisible">Enter <?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
 				<input id="modlgn-username" type="text" name="username" class="input-small" tabindex="0" size="18"  />
 
 			<?php else: ?>
-				<label for="modlgn-username"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?></label>
+				<label for="modlgn-username">Enter <?php echo JText::_('MOD_LOGIN_VALUE_USERNAME') ?></label>
 				<input id="modlgn-username" type="text" name="username" class="input-small" tabindex="0" size="18"  />
 			<?php endif; ?>
 		</div>
 		<div id="form-login-password" class="form-group">
 			<?php if (!$params->get('usetext')) : ?>
 
-				<label for="modlgn-passwd" class="element-invisible"><?php echo JText::_('JGLOBAL_PASSWORD'); ?></label>
+				<label for="modlgn-passwd" class="element-invisible">Enter <?php echo JText::_('JGLOBAL_PASSWORD'); ?></label>
 				<input id="modlgn-passwd" type="password" name="password" class="input-small" tabindex="0" size="18"  />
 
 			<?php else: ?>

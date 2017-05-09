@@ -48,7 +48,6 @@
 a.btn-primary, .btn-primary {
     @extend .btn;
     border: 1px solid $color__trim;
-    background: none;    
     &:after {
         background: $color__trim;
     }
@@ -60,7 +59,6 @@ a.btn-primary, .btn-primary {
 a.btn-gray, .btn-gray {
     @extend .btn;
     border: 1px solid #acbbc0;
-    background: none;    
     &:after {
         background: #acbbc0;
     }

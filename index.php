@@ -202,10 +202,18 @@ $showContentBottom = $this->countModules('content-bottom');
 
     </div>
     <section id="login-modal" class="modal fade login-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content bkgd-blue-tone">
+        <div class="modal-dialog bkgd-blue-tone" role="document">
+            <div class="modal-header">
+                
+                <svg role="presentation">
+                    <use xlink:href="<?php echo $templateUrl ?>/images/svgs/sprite.svg#icon-lock"></use>
+                </svg>
+                <!--[if lt IE 8]><img src="<?php echo $templateUrl ?>/images/icon_lock.png" alt="Vision 21 Logo"/><![endif]-->             
+            </div>
+            <div class="modal-content">
                 <jdoc:include type="modules" name="modal" />
             </div>
+
         </div>
     </section>
 
