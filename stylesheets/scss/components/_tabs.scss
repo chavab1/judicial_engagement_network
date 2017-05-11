@@ -10,9 +10,9 @@
 	}
 	> li {
 		display: block;
-		position: relative;
 		float: left;
 		> a {
+			padding: 10px 24px; 
 			border: 1px solid $color__gray;
 			border-bottom: none;
 		}

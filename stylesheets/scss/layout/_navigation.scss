@@ -3,8 +3,7 @@
         margin: 0;
         a {
             display: block;
-            position: relative;
-            padding: 10px 24px;                
+            position: relative;                           
         }
     }
 }
@@ -49,6 +48,7 @@ ul.nav.menu {
             }            
         }  
         a {
+            padding: 10px 24px; 
             color: #FFF;
             font: 22px $font__condensed;
             text-transform: uppercase;
