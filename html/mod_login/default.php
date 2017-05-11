@@ -40,7 +40,7 @@ JHtml::_('bootstrap.tooltip');
 				<input id="modlgn-passwd" type="password" name="password" class="input-small" tabindex="0" size="18"  />
 
 			<?php else: ?>
-				<label for="modlgn-passwd"><?php echo JText::_('JGLOBAL_PASSWORD') ?></label>
+				<label for="modlgn-passwd">Enter <?php echo JText::_('JGLOBAL_PASSWORD') ?></label>
 				<input id="modlgn-passwd" type="password" name="password" class="input-small" tabindex="0" size="18"  />
 			<?php endif; ?>
 		</div>
