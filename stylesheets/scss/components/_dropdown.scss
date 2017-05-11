@@ -2,20 +2,14 @@
 
 .dropdown-toggle.arrow {
   display: block;
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   margin: 0 auto;
-    &:before {
-        width: 10px;
-        height: 10px;
-        top: 8px;
-        right: 8px;
-        border-right: 1px solid $color__primary;
-        transform: rotate(135deg);
-    }
-    &:after {
-      display: none;      
-    }
+  background: url('data:image/svg+xml, %3Csvg%20version%3D%221.2%22%20baseProfile%3D%22tiny%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2055%2054.7%22%20overflow%3D%22scroll%22%3E%3Cpath%20fill%3D%22%237F898D%22%20d%3D%22M48.8%2013.8L27.5%2034.9%206.2%2013.8h-6l27.3%2027.1%2027.3-27.1%22%2F%3E%3C%2Fsvg%3E') no-repeat;          
+  background-size: 22px 22px;
+  &:before, &:after {
+    display: none;
+  }
 }
 
 .dropdown-menu {
