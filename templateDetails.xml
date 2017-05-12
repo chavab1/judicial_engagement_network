@@ -7,7 +7,7 @@
   <authorUrl>http://ncjfcj.org</authorUrl>
   <license>GNU/GPL</license>
   <version>1.0.0</version>
-  <description>TPL_JEN_XML_DESCRIPTION</description>
+  <description>Judicial Engagement Network Template Created for Joomla! 3.x.</description>
   <files>
     <filename>index.php</filename>
     <filename>templateDetails.xml</filename>
