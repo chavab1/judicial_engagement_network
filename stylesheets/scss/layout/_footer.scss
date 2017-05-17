@@ -45,6 +45,11 @@
     .nav {
         li {
             margin: 0 0 10px;
+            a {
+                @include susy-media('tablet') {
+                    display: inline-block;
+                }
+            }
         }
     }
 }

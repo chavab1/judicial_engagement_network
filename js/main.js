@@ -35,10 +35,30 @@ jQuery(function() {
 		});	
 	})
 
-
+	// Increse/Decrease font size
 	jQuery('.text-toggle').on('click', function(){
 		jQuery('body').toggleClass('font-large');
-	})
+	});
+
+
+	// Main Nav Sub-Menu Reveal
+	jQuery('.deeper.parent').hoverIntent({
+		over: open,
+		out: close,
+		interval: 10,
+		timeout: 400
+	});
+
+
+    function open(){
+    	jQuery(this).addClass('open').children('a').attr('aria-expanded', true);
+    	jQuery(this).children('ul').attr('aria-hidden', false).attr('aria-expanded', true);
+    }
+    function close(){
+    	jQuery(this).removeClass('open').children('a').attr('aria-expanded', false);
+    	jQuery(this).children('ul').attr('aria-hidden', true).attr('aria-expanded', false);
+	}
+
 
 });
 

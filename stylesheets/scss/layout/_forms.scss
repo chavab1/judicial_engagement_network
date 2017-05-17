@@ -1,7 +1,7 @@
 ﻿
 
 
-input:not([type='submit']):not([type='hidden']), textarea, select {
+input, textarea, select {
     display: inline-block;
     padding: 13px 10px;
     color: #222222;
@@ -18,41 +18,9 @@ input:not([type='submit']):not([type='hidden']), textarea, select {
     margin: 0 0 16px;
 }
 
-.search {
-    display: inline-block;
-    color: #222222;
-    @include susy-clearfix;
-    form {
-        display: inline-block;
-        @include susy-clearfix;
-    }
-    input[type="search"] {
-        float: left;
-        max-width: 76%;
-        height: 48px;
-    }
-}
-
-.search-button {
-    float: left;
-    width: 48px;
-    height: 48px;
-    fill: $color__gray;
-    border: 1px solid $color__gray;
-    transition: background .3s ease, border .3s ease, fill .3s ease;
-    &:hover {
-        background: $color__primary;
-        border: 1px solid $color__primary;
-        fill: #FFF;
-    }
-    svg {
-        width: 26px;
-        height: 26px;
-    }
-}
 
 .has-error {
-    input:not([type='submit']):not([type='hidden']), textarea, select {
+    input, textarea, select {
         background: #c34545;
         color: #FFF;
     }
@@ -80,7 +48,7 @@ input:not([type='submit']):not([type='hidden']), textarea, select {
 }
 
 .has-feedback {
-    input:not([type='submit']):not([type='hidden']), textarea, select {
+    input, textarea, select {
         border: none;
         &:focus {
             border: none;
@@ -162,8 +130,8 @@ a.close {
     }
 }
 
-footer, header {
-    input:not([type='submit']):not([type='hidden']), textarea, select {
+header, footer {
+    input, textarea, select {
         background: $color__gray;
         border: none;
         &:focus {
