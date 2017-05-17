@@ -51,36 +51,6 @@ a {
     color: #222;
     text-decoration: none;
     transition: all .3s ease;
-    &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 0;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        border-top: 1px solid $color__trim--dark;
-        transition: all .3s ease;
-    }
-    &:before {
-        content: '';
-        display: block;
-        width: 0;
-        height: 0;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        border-top: 1px solid $color__primary--dark;
-        transition: all .3s ease;
-    }
-    &:hover {
-        &:after {
-            width: 0;
-        }
-        &:before {
-            width: 100%;
-        }
-    }
 }
 
 
@@ -199,18 +169,10 @@ main {
     &:before {
         display: none;
     }
-    a {
-        &:before, &:after {
-            display: none;
-        }
-    }
 }
 
 .site-branding {
     fill: #FFF;
-    &:before, &:after {
-        display: none;
-    }
 }
 
 .fade {

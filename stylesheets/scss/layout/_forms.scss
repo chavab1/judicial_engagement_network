@@ -124,11 +124,6 @@ input, textarea, select {
     }
 }
 
-a.close {
-    &:before, &:after {
-        display: none;
-    }
-}
 
 header, footer {
     input, textarea, select {

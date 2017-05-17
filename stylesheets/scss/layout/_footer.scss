@@ -6,9 +6,6 @@
         color: $color__gray;
         font: 20px/18px $font__condensed;
         text-transform: uppercase;
-        &:after, &:before {
-            display: none;
-        }
         &:hover {
             color: $color__trim--dark;
         }
