@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="400px" height="120px" viewBox="0 0 400 120" style="enable-background:new 0 0 400 120;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E7AF40;}
+	.st1{fill:#FFFFFF;}
+	.st2{opacity:0.75;fill:#E7AF40;}
+	.st3{display:none;}
+	.st4{display:inline;fill:#E7AF40;}
+	.st5{display:inline;opacity:0.75;fill:#E7AF40;enable-background:new    ;}
+	.st6{opacity:0.4;fill:#E7AF40;enable-background:new    ;}
+	.st7{opacity:0.6;fill:#E7AF40;enable-background:new    ;}
+	.st8{opacity:0.8;fill:#E7AF40;enable-background:new    ;}
+	.st9{opacity:0.9;fill:#E7AF40;enable-background:new    ;}
+	.st10{opacity:0.3;fill:#E7AF40;enable-background:new    ;}
+	.st11{opacity:0.5;fill:#E7AF40;enable-background:new    ;}
+	.st12{opacity:0.7;fill:#E7AF40;enable-background:new    ;}
+</style>
+<g id="controls">
+	<polygon id="play" class="st1" points="17.9,9 4.3,1.2 4.3,16.8 	"/>
+	<g id="pause">
+		<g>
+			<path class="st1" d="M23,1h4.2v16H23V1z"/>
+			<path class="st1" d="M32.8,1H37v16h-4.2V1z"/>
+		</g>
+	</g>
+	<g id="fullscreen">
+		<g id="enter">
+			<path class="st1" d="M98.8,10.9v7.3h-7.4L98.8,10.9z"/>
+			<path class="st1" d="M88.4,18.2H81v-7.3L88.4,18.2z"/>
+			<path class="st1" d="M91.4,0.4h7.4v7.3L91.4,0.4z"/>
+			<path class="st1" d="M81,7.7V0.4h7.4L81,7.7z"/>
+		</g>
+		<g id="exit_1_">
+			<path class="st1" d="M112.7,18.1v-6h6.1L112.7,18.1z"/>
+			<path class="st1" d="M100.5,12.1h6.1v6L100.5,12.1z"/>
+			<path class="st1" d="M118.8,6h-6.1V0L118.8,6z"/>
+			<path class="st1" d="M106.6,0v6h-6.1L106.6,0z"/>
+		</g>
+	</g>
+	<g id="volume">
+		<g id="unmuted">
+			<path class="st1" d="M71.3,2.5l-5.2,3.9H61v7.7h4.2c0.3,0,0.7,0,1,0c0.3,0.2,0.5,0.4,0.8,0.6l4.3,3.3V2.5z"/>
+			<path class="st1" d="M74.1,18.8c-0.2,0-0.3,0-0.3,0l0.3-1.5c0,0,0.6,0.1,1.3-0.5c0.8-0.7,1.7-2.4,1.7-6.6c0-4.2-1-5.9-1.8-6.5
+				c-0.6-0.5-1.2-0.4-1.2-0.4l-0.3-1.5c0.1,0,1.3-0.2,2.5,0.7c1.5,1.3,2.3,3.8,2.3,7.7c0,3.9-0.8,6.5-2.3,7.8
+				C75.4,18.6,74.6,18.8,74.1,18.8z"/>
+			<path class="st1" d="M72.7,14.9c-0.1,0-0.2,0-0.2,0l0.2-1.5c0,0,0.5,0,0.9-0.4c0.5-0.5,0.8-1.5,0.8-2.8c0-1.3-0.3-2.3-0.8-2.7
+				c-0.4-0.4-0.9-0.3-0.9-0.3l-0.2-1.5c0.1,0,1.2-0.2,2.1,0.7c0.9,0.8,1.3,2.1,1.3,3.9c0,1.8-0.5,3.1-1.3,3.9
+				C73.9,14.8,73.1,14.9,72.7,14.9z"/>
+		</g>
+		<g id="muted">
+			<path class="st1" d="M51.3,2.5l-5.1,3.9H41v7.7h4.2c0.3,0,0.7,0,1,0c0.3,0.2,0.5,0.4,0.8,0.6l4.3,3.3V2.5z"/>
+			<rect x="54.5" y="5.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 9.3981 42.0876)" class="st0" width="2" height="7.6"/>
+			<rect x="51.7" y="8.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 9.3967 42.0855)" class="st0" width="7.6" height="2"/>
+		</g>
+	</g>
+	<g id="closed_captions">
+		<path class="st0" d="M126.3,13.8c-1.1,0-1.8-0.6-2.1-1c-1.1-1.3-1-3.5,0.1-4.8c0.5-0.6,2-1.7,4.7,0.1L128.4,9
+			c-1.4-1-2.6-1.1-3.4-0.3c-0.8,0.9-0.8,2.5-0.1,3.5c0.7,0.9,1.9,0.8,3.5-0.1l0.5,0.9C127.9,13.6,127,13.8,126.3,13.8z"/>
+		<path class="st0" d="M132.8,13.8c-1.1,0-1.8-0.6-2.1-1c-1.1-1.3-1-3.5,0.1-4.8c0.5-0.6,2-1.7,4.7,0.1L134.9,9
+			c-1.4-1-2.6-1.1-3.4-0.3c-0.8,0.9-0.8,2.5-0.1,3.5c0.7,0.9,1.9,0.8,3.5-0.1l0.5,0.9C134.4,13.6,133.5,13.8,132.8,13.8z"/>
+		<path class="st0" d="M122.2,3.4h15.7v13.1h-15.7V3.4z M120.8,2v15.7h18.3V2H120.8z"/>
+	</g>
+	<g>
+		<path class="st0" d="M141.2,3h18v14h-18V3z"/>
+		<path class="st1" d="M146.4,13.8c-0.8,0-1.6-0.4-2.1-1c-1.1-1.4-1-3.4,0.1-4.8c0.5-0.6,2-1.7,4.6,0.2L148.4,9
+			c-1.4-1-2.6-1.1-3.3-0.3c-0.8,1-0.8,2.4-0.1,3.5c0.7,0.9,1.9,0.8,3.4-0.1l0.5,0.9C148.2,13.5,147.3,13.7,146.4,13.8z"/>
+		<path class="st1" d="M153.9,13.8c-0.8,0-1.6-0.4-2.1-1c-1.1-1.4-1-3.4,0.1-4.8c0.5-0.6,2-1.7,4.6,0.2L156,9
+			c-1.4-1-2.6-1.1-3.3-0.3c-0.8,1-0.8,2.4-0.1,3.5c0.7,0.9,1.9,0.8,3.4-0.1l0.5,0.9C155.7,13.5,154.8,13.7,153.9,13.8z"/>
+	</g>
+</g>
+<g id="big_play">
+	<g>
+		<path class="st0" d="M155,44v71H85V44H155 M160,39H80v81h80V39L160,39z"/>
+		<polygon class="st0" points="142.2,77.9 108.6,58.7 108.6,97.1 		"/>
+	</g>
+	<g>
+		<path class="st2" d="M75,44v71H5V44H75 M80,39H0v81h80V39L80,39z"/>
+		<polygon class="st0" points="62.2,77.9 28.6,58.7 28.6,97.1 		"/>
+	</g>
+	<g id="big_play_opaque" class="st3">
+		<path class="st4" d="M60.3,77c0.6,0.2,0.8,0.8,0.6,1.4c-0.1,0.3-0.3,0.5-0.6,0.6L30,96.5c-1,0.6-1.7,0.1-1.7-1v-35
+			c0-1.1,0.8-1.5,1.7-1L60.3,77z"/>
+		<path class="st5" d="M40,119c-22.1,0-40-17.9-40-40c0-22.1,17.9-40,40-40s40,17.9,40,40C80,101.1,62.1,119,40,119z M40,44
+			C20.7,44,5,59.7,5,79s15.7,35,35,35s35-15.7,35-35S59.3,44,40,44z"/>
+	</g>
+	<g id="big_play_hover" class="st3">
+		<path class="st4" d="M140.3,77c0.6,0.2,0.8,0.8,0.6,1.4c-0.1,0.3-0.3,0.5-0.6,0.6L110,96.5c-1,0.6-1.7,0.1-1.7-1v-35
+			c0-1.1,0.8-1.5,1.7-1L140.3,77z"/>
+		<path class="st4" d="M120,119c-22.1,0-40-17.9-40-40c0-22.1,17.9-40,40-40s40,17.9,40,40C160,101.1,142.1,119,120,119z M120,44
+			c-19.3,0-35,15.7-35,35s15.7,35,35,35s35-15.7,35-35S139.3,44,120,44z"/>
+	</g>
+	<g id="loading">
+		<circle class="st0" cx="201.9" cy="47.1" r="8.1"/>
+		<circle class="st6" cx="233.9" cy="79" r="5"/>
+		<circle class="st7" cx="201.9" cy="110.9" r="6"/>
+		<circle class="st8" cx="170.1" cy="79" r="7"/>
+		<circle class="st9" cx="178.2" cy="56.3" r="7.5"/>
+		<circle class="st10" cx="226.3" cy="56.1" r="4.5"/>
+		<circle class="st11" cx="225.8" cy="102.8" r="5.5"/>
+		<circle class="st12" cx="178.2" cy="102.8" r="6.5"/>
+	</g>
+</g>
+<g id="replay">
+	<path class="st0" d="M178,9.4c0,0.4-0.4,0.7-0.9,0.7c-0.1,0-0.2,0-0.2-0.1L172,8.2c-0.5-0.2-0.6-0.6-0.1-0.8l6.2-3.6
+		c0.5-0.3,0.8-0.1,0.7,0.5L178,9.4z"/>
+	<path class="st0" d="M169.4,15.9c-1,0-2-0.2-2.9-0.7c-2-1-3.2-3-3.2-5.2c0.1-3.4,2.9-6,6.3-6c2.5,0.1,4.8,1.7,5.6,4.1l0.1-0.1
+		l2.1,1.1c-0.6-4.4-4.7-7.5-9.1-6.9c-3.9,0.6-6.9,3.9-7,7.9c0,2.9,1.7,5.6,4.3,7c1.2,0.6,2.5,0.9,3.8,1c2.6,0,5-1.2,6.6-3.3
+		l-1.8-0.9C173,15.1,171.2,15.9,169.4,15.9z"/>
+</g>
+<g id="chapters">
+	<g>
+		<rect x="187" y="13.2" class="st1" width="11.5" height="3"/>
+		<rect x="181.9" y="13.2" class="st1" width="3" height="3"/>
+	</g>
+	<g>
+		<rect x="187" y="8.2" class="st1" width="11.5" height="3"/>
+		<rect x="181.9" y="8.2" class="st1" width="3" height="3"/>
+	</g>
+	<g>
+		<rect x="187" y="3.2" class="st1" width="11.5" height="3"/>
+		<rect x="181.9" y="3.2" class="st1" width="3" height="3"/>
+	</g>
+</g>
+</svg>

@@ -39,13 +39,9 @@ $showContentBottom = $this->countModules('content-bottom');
 ?>
 
 
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
-
-
-
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="HandheldFriendly" content="true" />
@@ -125,6 +121,7 @@ $showContentBottom = $this->countModules('content-bottom');
         <nav class="nav-main">
             <a href="#reveal-nav" id="reveal-nav" class="nav-toggle nav-toggle-reveal btn-primary" role="button" aria-controls="nav">Main Menu</a>
             <a href="#hide-nav" id="hide-nav" class="nav-toggle nav-toggle-hide btn-primary" role="button" aria-controls="nav">Close</a>
+          
             <jdoc:include type="modules" name="main-nav" />
             <?php
             $user = JFactory::getUser();
@@ -152,9 +149,9 @@ $showContentBottom = $this->countModules('content-bottom');
         </div>
 
     <!--Content-->
-    <main class="container">
+    <div class="container">
         <jdoc:include type="component" />
-    </main>
+    </div>
 
 
     <?php if($showContentBottom): ?>

@@ -40,7 +40,7 @@ ul.nav.menu {
     }
     .nav.menu {
         position: absolute;
-        top: 40px;
+        top: 100%;
         left: 0;
         width: 100%;
         background: #142539;
@@ -52,8 +52,7 @@ ul.nav.menu {
             position: relative;
             top: 0;
             background: none;
-            transform: scaleY(1);
-            z-index: 1;            
+            transform: scaleY(1);         
         }
         @include susy-media('desktop-wide') {
             width: 756px;
@@ -111,6 +110,7 @@ ul.nav.menu {
                     @include susy-media('mobile-wide') {
                         max-height: none;
                         visibility: visible;
+                        overflow: visible;
                         opacity: 1;
                         transform: translateX(0);
                         a {
@@ -126,6 +126,19 @@ ul.nav.menu {
                 left: 0;
                 background: $color__gray--dark;
                 transition: max-height .7s cubic-bezier(.23,.47,.78,.71);
+                @include susy-media('mobile-wide') {
+                    position: absolute;    
+                    min-width: 260px;
+                    max-width: 400px;                                 
+                    max-height: none;
+                    visibility: hidden;
+                    top: 0;
+                    left: 0;  
+                    opacity: 0; 
+                    transform: translateX(125%);   
+                    transform-origin: center top;
+                    transition: transform .4s cubic-bezier(.41,.15,.7,.89), opacity .4s ease, visibility .4s ease;                                  
+                }                   
                 li {
                     text-align: left;
                     &:first-of-type {
@@ -142,43 +155,35 @@ ul.nav.menu {
             > ul {
                 background: #213349;
                 @include susy-media('mobile-wide') {
-                    position: absolute;    
-                    min-width: 260px;
-                    max-width: 400px;                                 
-                    max-height: none;
-                    visibility: hidden;
                     top: 100%;
-                    left: 0;  
-                    opacity: 0; 
-                    transform: translateX(50%);   
-                    transform-origin: center top;
-                    transition: transform .4s cubic-bezier(.41,.15,.7,.89), opacity .4s ease, visibility .4s ease;                                  
+                    transform: translateX(50%);                               
                 }                
                 .open {
                     > ul {
                         max-height: 300px;
+                        @include susy-media('mobile-wide') {
+                            max-height: none;
+                            visibility: visible;
+                            opacity: 1;
+                            transform: translateX(100%);
+                        }
+                    }
+                    > a {
+                        color: $color__trim;
                     }                    
                 }
                 a {
+                    transition: transform .6s .2s ease, color .3s ease, opacity .3s .2s ease;
                     @include susy-media('mobile-wide') {
                         opacity: 0;
-                        transform: translateY(100%);
-                        transition: transform .6s .2s ease, color .3s ease, opacity .3s .2s ease;
+                        transform: translateY(100%);                        
                     }
-                }
-                .open {
-                    > a {
-                        color: $color__trim;
-                    }                        
                 }
             } // ul          
         } // > li        
     } //.nav.menu    
 
     li {
-        @include susy-media('desktop') {
-            float: none;
-        }  
         &.active {
             background: #213349;
             @include susy-media('mobile-wide') {

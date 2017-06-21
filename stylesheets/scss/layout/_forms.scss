@@ -78,6 +78,15 @@ input, textarea, select {
     }
 }
 
+
+.alert-message {
+    background: $color__gray--light;
+    .close:hover {
+        color: #FFF;
+        background: $color__gray--dark;         
+    }
+}
+
 .alert-info, .alert-warning {
     background: $color__trim--dark;
     .close {

@@ -1,4 +1,9 @@
 ﻿.home {
+    main {
+        @include susy-media('tablet') {
+            margin: 60px 0;
+        }
+    }
     .bkgd-blue {
         padding: 20px 0 40px;
         @include susy-media('tablet') {
@@ -17,5 +22,24 @@
         h2, h3 {
             text-align: center;
         }
+    }
+}
+
+
+.intro {
+    @include susy-media('tablet') {
+        @include span(6);
+    }
+    @include susy-media('desktop') {
+        @include span(7);
+    }
+}
+
+.video-section {
+    @include susy-media('tablet') {
+        @include span(6 last);
+    }    
+    @include susy-media('desktop') {   
+        @include span(5 last);
     }
 }
