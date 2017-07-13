@@ -1,0 +1,273 @@
+﻿
+
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="range"]), textarea, select {
+    display: inline-block;
+    padding: 10px;
+    color: #222222;
+    background: #FFF;
+    border: 1px solid $color__gray;
+    transition: all .3s ease;
+    &:focus {
+        color: #222 !important;
+        // border: 1px solid $color__primary;
+        background: #FFF !important;
+    }
+}
+
+label {
+    display: block;
+    margin: 0 0 10px;
+    line-height: 22px;
+}
+
+
+label.invalid {
+    color: $color__red;
+}
+
+.invalid {
+    border-color: $color__red;
+}
+
+.radio input[type="radio"], .checkbox input[type="checkbox"] {
+    float: left;  
+    width: 13px;
+    height: 13px;
+    margin: 4px 6px 0 0;
+    border: 1px solid $color__gray;
+    vertical-align: middle;  
+    &:checked {
+        background: $color__gray;
+    }
+}
+
+.radio input[type="radio"] {
+    border-radius: 50%;
+}
+
+.form-group, .control-group {
+    margin: 0 0 16px;
+}
+
+
+.has-error {
+    input:not([type="radio"]):not([type="checkbox"]), textarea, select {
+        background: $color__red;
+        color: #FFF;
+        box-shadow: none;
+    }
+}
+
+.system-message-container.overlay {
+    position: fixed;
+    width: 90%;
+    max-height: 800px;
+    top: 10%;
+    left: 5%;
+    z-index: index($elements, alert);
+    @include susy-media('mobile-wide') {
+        max-height: 400px;
+    }
+    @include susy-media('desktop') {
+        top: 25%;
+        width: 65%;
+        left: 17.5%;
+    }
+    @include susy-media('desktop-wide') {
+        width: 50%;
+        left: 25%;
+    }
+}
+
+.has-feedback {
+    input, textarea, select {
+        border: none;
+        &:focus {
+            border: none;
+        }
+    }
+}
+
+.alert {
+    padding: 20px;
+    text-align: center;
+    &:before {
+        content: '';
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background: #000;
+        opacity: .65;
+    }
+    h4 {
+        font-size: 22px;
+        line-height: 20px;
+    }
+    ul {
+        text-align: left;
+    }
+    div[class^="alert"] {
+        background: none;
+    }
+}
+
+
+.alert-message {
+    background: $color__gray--light;
+    .close:hover {
+        color: #FFF;
+        background: $color__gray--dark;         
+    }
+}
+
+.alert-info, .alert-warning {
+    background: $color__trim--dark;
+    .close {
+        border-color: #222;
+        &:hover {
+            background: $color__trim;
+        }
+    }
+    li:before {
+        background: $color__primary;
+    }
+}
+
+.alert-danger, .alert-success, .alert-error {  
+    color: #FFF;  
+    .close {
+        color: #FFF;
+        border-color: #FFF;
+    }
+}
+
+.alert-danger, .alert-error {
+    background:  $color__red;
+    .close:hover {
+        background: #d51b1b;
+    }
+}
+
+.alert-success {    
+    background: $color__primary;
+    .close:hover {
+        background: $color__primary--dark;
+    }
+}
+
+.close {
+    float: right;
+    padding: 10px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 28px;
+    line-height: 14px;
+    transition: all .3s ease;
+    color: #222;
+    cursor: pointer;
+    &:hover {
+        color: #222;
+        border: 1px solid transparent;
+    }
+}
+
+
+
+header, footer {
+    input, textarea, select {
+        background: $color__gray;
+        border: none;
+        &:focus {
+            background: #FFF;
+            border: none;
+        }
+    }
+}
+
+.controls {
+    li {
+        padding: 0;
+        &:before {
+            display: none;
+        }
+    }
+    button {
+        vertical-align: bottom;
+    }
+}
+
+
+
+#adminForm {
+    margin: 20px 0;
+}
+
+.registration {
+    form {
+        input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea {
+            width: 100%;
+        }
+    }
+    .form-inner {
+        max-width: 480px;
+        margin: 0 auto;
+    }
+}
+
+.pic-upload-wrapper {
+    @include clearfix;
+    max-width: 800px;
+    margin: 40px auto 80px;
+    padding: 10px;    
+    @include susy-media('tablet') {
+        margin: 60px auto 100px;
+        border: 1px solid $color__gray--light;
+    }
+    > div {
+        text-align: center;
+        vertical-align: middle;
+        @include susy-media('tablet') {
+            display: table-cell;
+            width: 50%;
+        }
+    }
+    .croppie-outer, .upload-set {
+        display: none;
+    }
+    &.ready {
+        .croppie-outer {
+            display: block;
+        }        
+        .upload-set {
+            display: inline-block;
+        }
+    }
+}
+
+
+.pic-upload-set {
+    max-width: 324px;
+    margin: 20px auto;  
+    color: $color__gray;   
+    // background: $color__trim;  
+    border: 2px solid $color__gray;
+    text-align: center;    
+    cursor: pointer;
+    @include susy-media('tablet') {
+        width: 324px;
+        height: 228px;
+    }
+}
+
+.pic-upload-msg {
+    display: table-cell;
+    height: 224px;
+    padding: 40px;
+    vertical-align: middle;
+}
+
+

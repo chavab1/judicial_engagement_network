@@ -33,7 +33,7 @@ jQuery(function() {
 			else
 				jQuery(this).parent('.form-group').removeClass('filled');			
 		});	
-	})
+	});
 
 	// Increse/Decrease font size
 	jQuery('.text-toggle').on('click', function(){
@@ -65,8 +65,8 @@ jQuery(function() {
 	for(var i = 0; i < hashLinks.length; i++) {
 	    hashLinks[i].addEventListener('click', function(e){
 	    e.preventDefault ? e.preventDefault() : e.returnValue = false; 
-	    })
-	};
+	    });
+	}
 
 
 	jQuery('video, audio').mediaelementplayer({

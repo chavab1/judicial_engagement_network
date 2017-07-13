@@ -29,9 +29,10 @@ ul.nav.menu {
     background: $color__primary;
     @include clearfix;
     @include susy-media('mobile-wide') {
+        height: 43px;
         padding: 0 10px;
     }
-    @include susy-media('tablet') {
+    @include susy-media('desktop') {
         height: 48px;
         padding: 0 20px;
     }
@@ -48,18 +49,21 @@ ul.nav.menu {
         transform-origin: center top;
         transition: transform .4s ease;
         z-index: index($elements, main-nav);
-        @include susy-media('mobile-wide') {
-            position: relative;
+        @include susy-media('tablet') {
+            width: auto;
             top: 0;
             background: none;
-            transform: scaleY(1);         
+            transform: scaleY(1);                 
+            left: 10px;
         }
         @include susy-media('desktop-wide') {
+            position: relative;
+            left: 0;
             width: 756px;
             margin: 0 auto;
         }
         > li {
-            @include susy-media('mobile-wide') {
+            @include susy-media('tablet') {
                 display: inline-block;
                 float: left;
             }           
@@ -67,13 +71,10 @@ ul.nav.menu {
                 padding: 10px 20px;
                 font: 20px $font__condensed;
                 transition: color .3s ease;
-                text-transform: uppercase;
-                @include susy-media('tablet') {
-                    padding: 10px 22px;
-                    font-size: 26px;
-                }                 
+                text-transform: uppercase;           
                 @include susy-media('desktop') {
                     padding: 10px 30px;
+                    font-size: 26px;
                 } 
                 @include susy-media('desktop-wide') {
                     padding: 10px 40px;
@@ -107,7 +108,7 @@ ul.nav.menu {
                 }
                 > ul {
                     max-height: 900px;
-                    @include susy-media('mobile-wide') {
+                    @include susy-media('tablet') {
                         max-height: none;
                         visibility: visible;
                         overflow: visible;
@@ -126,7 +127,7 @@ ul.nav.menu {
                 left: 0;
                 background: $color__gray--dark;
                 transition: max-height .7s cubic-bezier(.23,.47,.78,.71);
-                @include susy-media('mobile-wide') {
+                @include susy-media('tablet') {
                     position: absolute;    
                     min-width: 260px;
                     max-width: 400px;                                 
@@ -154,14 +155,14 @@ ul.nav.menu {
             }
             > ul {
                 background: #213349;
-                @include susy-media('mobile-wide') {
+                @include susy-media('tablet') {
                     top: 100%;
                     transform: translateX(50%);                               
                 }                
                 .open {
                     > ul {
                         max-height: 300px;
-                        @include susy-media('mobile-wide') {
+                        @include susy-media('tablet') {
                             max-height: none;
                             visibility: visible;
                             opacity: 1;
@@ -174,7 +175,7 @@ ul.nav.menu {
                 }
                 a {
                     transition: transform .6s .2s ease, color .3s ease, opacity .3s .2s ease;
-                    @include susy-media('mobile-wide') {
+                    @include susy-media('tablet') {
                         opacity: 0;
                         transform: translateY(100%);                        
                     }
@@ -188,7 +189,10 @@ ul.nav.menu {
             background: #213349;
             @include susy-media('mobile-wide') {
                 background: $color__primary--dark;
-            }            
+            }   
+            .active .active {
+                background: #6a7377;
+            }         
         }  
         a {
             font: 22px $font__condensed;
@@ -208,9 +212,12 @@ ul.nav.menu {
             right: 10px;
         }
         @include susy-media('tablet') {
-            top: 3px;
+            top: 1px;
             right: 20px;
         }
+        @include susy-media('desktop') {
+            top: 4px;            
+        }        
         @include susy-media('desktop-wide') {
             right: 80px;
         }
@@ -243,18 +250,21 @@ ul.nav.menu {
 
 a.nav-toggle {
     display: none;
+    @include susy-media('mobile-wide') {    
+        top: 6px;
+    }
 }
 
 a.nav-toggle-reveal {
     display: inline-block;
-    @include susy-media('mobile-wide') {
+    @include susy-media('tablet') {
         display: none;
     }
     &:target {
         display: none;
         & + a.nav-toggle-hide {
             display: inline-block;
-            @include susy-media('mobile-wide') {
+            @include susy-media('tablet') {
                 display: none;
             }
         }
@@ -268,13 +278,16 @@ a.nav-toggle-reveal {
     display: inline-block;
     margin: 10px 0;
     vertical-align: top;
-    @include susy-media('mobile-wide') {
+    @include susy-media('tablet') {
         float: left;
         margin: 6px 0;
     }    
-    @include susy-media('tablet') {
-        margin: 8px 40px 0 0;
-    }   
+    // @include susy-media('tablet') {
+    //     margin: 6px 10px 0 0;
+    // }  
+    @include susy-media('desktop') {
+        margin: 8px 10px 0 0;
+    }      
     svg {
         width: 30px;
         height: 30px;

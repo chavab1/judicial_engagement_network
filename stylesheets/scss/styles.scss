@@ -4,12 +4,13 @@
 @import 'helpers/functions';
 @import 'susy';
 @import 'base/globals';
+@import 'base/grid';
 @import 'base/typography';
 @import 'base/buttons';
-@import 'layout/forms';
 @import 'layout/header';
 @import 'layout/navigation';
 @import 'layout/footer';
+@import 'components/forms';
 @import 'components/search';
 @import 'components/slideshows';
 @import 'components/login-modal';
@@ -18,4 +19,5 @@
 @import 'components/popover';
 @import 'components/chosen';
 @import 'components/video-player';
+@import 'components/croppie';
 @import 'pages/home';

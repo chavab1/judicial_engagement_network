@@ -178,9 +178,11 @@ main {
     }
 }
 
-.pull-right {
-    float: right;
+.border-bottom {
+    padding: 0 0 10px;
+    border-bottom: 1px solid $color__trim;    
 }
+
 
 .edit-icon {
     padding: 0;
@@ -220,4 +222,14 @@ main {
     h1 {
         margin: 0;            
     }
+    + main {
+        margin: 0 0 40px;
+        @include susy-media('tablet') {
+            margin: 0 0 60px;
+        }
+    }
+}
+
+.star {
+    color: $color__red;
 }

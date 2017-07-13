@@ -28,9 +28,9 @@ if (!empty($options['showonEnabled']))
 $class = empty($options['class']) ? '' : ' ' . $options['class'];
 $rel   = empty($options['rel']) ? '' : ' ' . $options['rel'];
 ?>
-<div class="control-group<?php echo $class; ?> form-group"<?php echo $rel; ?>>
+<div class="<?php echo $class; ?> form-group"<?php echo $rel; ?>>
 	<?php if (empty($options['hiddenLabel'])) : ?>
-		<div class="control-label"><?php echo $label; ?></div>
+		<?php echo $label; ?>
 	<?php endif; ?>
-	<div class="controls"><?php echo $input; ?></div>
+	<?php echo $input; ?>
 </div>

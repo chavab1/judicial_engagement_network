@@ -16,11 +16,11 @@ jen.validate = jen.validate || {
 
 	/* --------- Regular Expressions -------- */
 
-	regEx_date: /^((0?[1-9]|1[012])[-](0?[1-9]|[12][0-9]|3[01])[-](19|20)?[0-9]{2})*$/, // only allows dates formatted (m)m/(d)d/(yy)yy in 1900s or 2000s
+	regEx_date: /^((0?[1-9]|1[012])[\/](0?[1-9]|[12][0-9]|3[01])[\/](19|20)?[0-9]{2})*$/, // only allows dates formatted (m)m/(d)d/(yy)yy in 1900s or 2000s
 	regEx_email: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 	regEx_name: /^[a-zA-Z-\' ]*$/, // upper and lowercase letters with apostrophes, hyphens, and/or spaces
 	regEx_password: /\w{5,}/, // 5 characters or more
-	regEx_phone: /[\d() -ext\.]/, // digits with parenthesis, periods, and extension (no formatting check)
+	regEx_phone: /(([0-9]{3}[\-])|[\(][0-9]{3}[\)])[0-9]{3}[\-][0-9]{4}/, // digits with parenthesis or dashas for area code
 	regEx_time: /^(([1-9]|1[012])[:](0[0-9]|[12345][0-9])[ap][m])*$/, // a time string formatted hh:mm[am|pm]
 	regEx_title: /^[a-zA-Z0-9-@&():;,\[\]\'\"\-\.\/\\ ]*$/, // alpha numeric with select special characters
 	regEx_unsigned: /^n?\d+$/, // unsigned integer
@@ -28,6 +28,27 @@ jen.validate = jen.validate || {
 
 
 	/* ----------- Field Validation --------- */
+
+	/**
+	 * Checks whether a select list has an item selected.
+	 *
+	 * @param object A jQuery object for a single form element.
+	 *
+	 * @return boolean True if valid, false otherwise.
+	 */
+	select: function(obj){
+		// make sure the input exists, and if not return false
+		if(!obj.length){
+			return false;
+		}
+
+		if(!obj.val()){
+			return false;
+		}
+		return true;
+	},
+
+
 
 	/**
 	 * Checks whether a checkbox or set of checkboxes has a selection.
@@ -38,14 +59,15 @@ jen.validate = jen.validate || {
 	 * @return boolean True if valid, false otherwise.
 	 */
 	checkboxes: function(obj, minRequired){
-		// make sure the input exists, and if not return false
-		if(!obj.length){
+		// make sure the input exists, and if not return false		 
+		if(!obj.find('input[type=checkbox]').length){
 			return false;
-		}
+		}		 
+		
+		if(obj.find('input[type=checkbox]:checked').length < minRequired){
+			return false;
+		}		
 
-		if(obj.length < minRequired){
-			return false;
-		}
 		return true;
 	},
 
@@ -143,7 +165,7 @@ jen.validate = jen.validate || {
 		showState = this.sanitizeShowState(showState);
 
 		// check validity
-		return this.validationResult(obj1.val() && obj1.val() == obj2.val(), obj, showState);
+		return this.validationResult(obj1.val() && obj1.val() == obj2.val(), obj2, showState);
 	},
 
 	/**
@@ -279,6 +301,25 @@ jen.validate = jen.validate || {
 		// check validity
 		return this.validationResult(this.regEx_phone.test(obj.val()), obj, showState);
 	},
+
+	/**
+	 * Checks whether either radio button from a group is selected.
+	 *
+	 * @param object A jQuery object for a single form element.
+	 *
+	 * @return boolean True if valid, false otherwise.
+	 */
+	radio: function(obj) {
+		// make sure the input exists, and if not return false
+		if(!obj.length){
+			return false;
+		}
+		if(!obj.is(':checked')){
+			return false;
+		}
+		return true;		
+	},
+
 
 	/**
 	 * Checks whether the value provided matches the provided regular expression

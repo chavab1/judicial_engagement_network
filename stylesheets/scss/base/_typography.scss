@@ -12,19 +12,14 @@
   font-style: normal;
 }
 
+
 @font-face {
-  font-family: 'CarroisGothic';
-  src: url('../../fonts/CarroisGothic.eot?#iefix') format('embedded-opentype'),  url('../../fonts/CarroisGothic.woff') format('woff'), url('../../fonts/CarroisGothic.ttf')  format('truetype'), url('../../fonts/CarroisGothic.svg#CarroisGothic') format('svg');
+  font-family: 'Proxima';
+  src: url('../../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),  url('../../fonts/ProximaNova-Regular.woff') format('woff'), url('../../fonts/ProximaNova-Regular.ttf')  format('truetype'), url('../../fonts/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Calibri';
-  src: url('../../fonts/Calibri.eot?#iefix') format('embedded-opentype'),  url('../../fonts/Calibri.woff') format('woff'), url('../../fonts/Calibri.ttf')  format('truetype'), url('../../fonts/Calibri.svg#Calibri') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
 
 h1, h2, h3 {
     text-transform: uppercase;
@@ -56,31 +51,31 @@ h1 {
     line-height: 36px;
     @include susy-media('tablet') {
         margin: 0 0 20px;
-        font-size: 46px;
-        line-height: 44px;
+        font-size: 48px;
+        line-height: 46px;
     }    
 
 }
 
 h2 {
-    font-size: 28px;
-    line-height: 26px;
+    font-size: 30px;
+    line-height: 28px;
     @include susy-media('tablet') {
         font-size: 34px;
-        line-height: 32px;
+        line-height: 34px;
     }
 }
 
 h3 {
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 20px;
     @include susy-media('tablet') {
-        font-size: 24px;
-        line-height: 26px;
+        font-size: 22px;
+        line-height: 24px;
     }
 }
 
 h4 {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 18px;
 }

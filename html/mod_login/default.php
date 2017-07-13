@@ -65,7 +65,7 @@ JHtml::_('bootstrap.tooltip');
 		<?php endif; ?>
 		<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
 		<div id="form-login-remember" class="form-group checkbox">
-			<label for="modlgn-remember" class="control-label"><?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?></label> <input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes"/>
+			<label for="modlgn-remember" class="control-label"><input id="modlgn-remember" type="checkbox" name="remember" class="inputbox" value="yes"/><?php echo JText::_('MOD_LOGIN_REMEMBER_ME') ?></label> 
 		</div>
 		<?php endif; ?>
 		<div id="form-login-submit" class="form-group">
@@ -77,7 +77,7 @@ JHtml::_('bootstrap.tooltip');
 			<?php if ($usersConfig->get('allowUserRegistration')) : ?>
 				<li>
 					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration&Itemid=' . UsersHelperRoute::getRegistrationRoute()); ?>">
-					<?php echo JText::_('MOD_LOGIN_REGISTER'); ?> <span class="icon-arrow-right"></span></a>
+					<?php echo JText::_('MOD_LOGIN_REGISTER'); ?></a>
 				</li>
 			<?php endif; ?>
 				<li>

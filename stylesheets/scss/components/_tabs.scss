@@ -14,6 +14,7 @@
 		> a {
 			padding: 10px 24px; 
 			border: 1px solid $color__gray;
+			color: $color__gray--dark;
 			border-bottom: none;
 		}
 		&.active {
